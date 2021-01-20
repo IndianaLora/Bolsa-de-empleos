@@ -9,27 +9,65 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/index.css" />
-    <title>Bolsa de Empleo</title>
+    <title>Document</title>
   </head>
   <body>
     <div class="Header">
-      <header class="text-dark">Bolsa de Empleo</header>
+      <header class="text-dark">Bolsa de Empleo Tecnologicos</header>
+      <a class="btn btn-success" href="login.html" role="button" id="post"
+        >Post a job</a
+      >
     </div>
-    <div class="login">
-      <img src="img/login.png" alt="login" id="img-login" />
-      <form>
-        <label for="">Usuario</label>
-        <input type="text" placeholder="Introduzca su usuario" />
-        <label for="">Password</label>
-        <input type="password" placeholder="Introduzca su password" />
-        <input type="button" value="Ingresar" id="ingresar" />
-      </form>
+    <div class="jobs-container">
+      <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </nav>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
