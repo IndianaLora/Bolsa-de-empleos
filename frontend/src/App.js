@@ -11,7 +11,7 @@ function Header(props) {
           <span id="d">D</span>
         </h1>
       </header>
-      {function Forms() {
+      {/* {function Forms() {
         return (
           <form>
             <label>
@@ -21,7 +21,7 @@ function Header(props) {
             <input type="submit" value="Submit" />
           </form>
         );
-      }}
+      }} */}
     </div>
   );
 }
