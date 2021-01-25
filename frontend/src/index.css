@@ -12,7 +12,7 @@ code {
     monospace;
 }
 h1 {
-  color: brown;
+  color: rgb(7, 7, 7);
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -21,4 +21,10 @@ h1 {
   padding: 1em;
   margin-bottom: 2em;
   background-color: blanchedalmond;
+}
+#r{
+  color: blue;
+}
+#d{
+  color: rgb(230, 8, 8);
 }
