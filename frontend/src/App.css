@@ -28,3 +28,20 @@ body {
     transform: rotate(360deg);
   }
 }
+header nav a {
+  display: inline-block;
+  color: #493df3;
+  text-decoration: none;
+  padding: 10px 20px;
+  line-height: normal;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transition: all 500ms ease;
+  -o-transition: 500ms ease;
+  transition: all 500ms ease;
+}
+
+header nav a:hover {
+  background: rgb(136, 129, 163);
+  border-radius: 50px;
+}

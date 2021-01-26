@@ -54,7 +54,7 @@ function Container() {
       <input type="submit" value="Submit" />
       <br></br>
       <label>
-        Descripción  :
+        Descripción :
         <input type="text" name="name" />
       </label>
       <input type="submit" value="Submit" />

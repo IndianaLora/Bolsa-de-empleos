@@ -9,7 +9,13 @@ function Header(props) {
           Empleos
           <span id="r">R</span>
           <span id="d">D</span>
+          <nav id="nav">
+          <a href="">Inicio</a>
+          <a href="">Sobre nosotros</a>
+          <a href="">Contacto</a>
+        </nav>
         </h1>
+        
       </header>
     </div>
   );
