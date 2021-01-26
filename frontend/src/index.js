@@ -2,14 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Header from "./App";
-import Forms from "./App";
+import Container from "./container";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div>
     <Header />
-  </React.StrictMode>,
+  </div>,
   document.getElementById("header")
+);
+ReactDOM.render(
+  <div>
+    <React.StrictMode>
+      <Container />
+    </React.StrictMode>
+  </div>,
+  document.getElementById("root")
 );
 
 reportWebVitals();

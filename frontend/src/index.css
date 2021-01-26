@@ -19,7 +19,6 @@ h1 {
   align-items: baseline;
   padding: 1%;
   margin-top: 0%;
-  margin-bottom: 120%;
   background-color: rgb(255, 255, 255);
 }
 #r {
@@ -27,4 +26,12 @@ h1 {
 }
 #d {
   color: rgb(230, 8, 8);
+}
+#counter {
+  justify-content: right;
+}
+#form {
+  margin-top: 10%;
+  margin-left: 40%;
+  display:inline-flexbox;
 }
