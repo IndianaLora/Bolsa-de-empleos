@@ -1,3 +1,6 @@
+* {
+  font-family: "Abril Fatface", cursive;
+}
 .App {
   text-align: center;
 }
@@ -28,8 +31,18 @@ body {
     transform: rotate(360deg);
   }
 }
+header {
+  /* position: fixed; */
+
+  border-bottom: 2px solid rgb(128, 121, 121);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px #97c0e7;
+  background-color: #493df3;
+}
 header nav a {
-  display: inline-block;
+  display: inline-table;
+  justify-content: end;
+  align-items: flex-end;
   color: #493df3;
   text-decoration: none;
   padding: 10px 20px;
@@ -39,9 +52,20 @@ header nav a {
   -webkit-transition: all 500ms ease;
   -o-transition: 500ms ease;
   transition: all 500ms ease;
+  border-bottom: 2px solid rgb(128, 121, 121);
 }
 
 header nav a:hover {
   background: rgb(136, 129, 163);
   border-radius: 50px;
+}
+#footer {
+  background-color: red;
+}
+img {
+  width: 160px;
+  height: 80px;
+  margin-left: 2%;
+  border-radius: 20%;
+  box-shadow: 5px 10px 20px #97c0e7;
 }

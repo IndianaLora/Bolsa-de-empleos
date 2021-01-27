@@ -30,14 +30,34 @@ h1 {
 #counter {
   justify-content: right;
 }
+#container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
 #form {
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
   margin-top: 5%;
-  margin-bottom: 7%;
-  margin-left: 35%;
-  margin-right: 35%;
+  margin-bottom: 5%;
   padding: 2%;
   border: 2px solid rgb(128, 121, 121);
   border-radius: 5px;
-  box-shadow: 5px 10px #97c0e7;
+  box-shadow: 5px 10px 20px #97c0e7;
   background-color: beige;
+}
+form input {
+  border-radius: 5px;
+}
+#button {
+  margin-top: 10%;
+  margin-left: 25%;
+  height: 50px;
+  width: 100px;
+  color: beige;
+  background-color: #e40f0f;
+  border: 2px solid rgb(128, 121, 121);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px #97c0e7;
 }
