@@ -1,5 +1,9 @@
 * {
   font-family: "Bree Serif", serif;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  outline: none;
 }
 .App {
   text-align: center;
@@ -15,13 +19,23 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 body {
   background-image: url("2.gif");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
-
+h1 {
+  color: rgb(7, 7, 7);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  padding: 1%;
+  margin-top: 0%;
+  background-color: rgb(255, 255, 255);
+}
 .App-link {
   color: #61dafb;
 }
@@ -54,7 +68,7 @@ header li a {
   display: inline-table;
   justify-content: end;
   align-items: flex-end;
-  color: #493df3;
+  color: #030303;
   text-decoration: none;
   padding: 10px 20px;
   line-height: normal;
@@ -65,6 +79,7 @@ header li a {
   transition: all 500ms ease;
   list-style: none;
   border-bottom: 2px solid rgb(128, 121, 121);
+  border-bottom-style: groove;
 }
 
 header li a:hover {
@@ -77,7 +92,10 @@ header li a:hover {
 #D {
   color: red;
 }
-
+a {
+  color: #030303;
+}
 #footer {
+  color: #030303;
   background-color: red;
 }
