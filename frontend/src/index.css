@@ -39,20 +39,22 @@ h1 {
   display: inline-table;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-bottom: 5%;
+
   padding: 2%;
-  border: 2px solid rgb(128, 121, 121);
+
+  border-color: solid rgb(236, 228, 228);
   border-radius: 5px;
-  box-shadow: 5px 10px 20px #97c0e7;
-  background-color: beige;
+  box-shadow: 5px 10px 20px 20px #97c0e7;
+  background-color: rgb(178, 183, 206);
 }
 form input {
   border-radius: 5px;
 }
 #button {
   margin-top: 10%;
-  margin-left: 25%;
+  margin-left: 35%;
   height: 50px;
   width: 100px;
   color: beige;
