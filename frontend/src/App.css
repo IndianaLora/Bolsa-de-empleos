@@ -16,7 +16,14 @@
   }
 }
 body {
-  background-color: rgb(36, 36, 46);
+  background-image: linear-gradient(
+    to right top,
+    #73747b,
+    #787b8c,
+    #7b839e,
+    #7d8bb0,
+    #7e93c2
+  );
 }
 
 .App-link {
