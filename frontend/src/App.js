@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+
 import "./App.css";
-import ReactDOM from "react-dom";
+
 function Header(props) {
   return (
     <div className="header">
