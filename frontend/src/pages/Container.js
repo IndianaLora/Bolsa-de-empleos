@@ -1,9 +1,8 @@
-import "./App.css";
-import { useForm } from "src/react-hook-form";
+import "./Form.css";
+import { useForm } from "react-hook-form";
 
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
-  // var posicion = {};
   const onSubmit = (data) => console.log(data);
 
   return (

@@ -1,20 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Header from "./App";
-import Container from "./container";
-import reportWebVitals from "./reportWebVitals";
+import "./Header.css";
+import "./busqueda.css";
+import Navbar from "./components/navbar/navbar";
+import Container from "./pages/Container";
+import Busqueda from "./Busqueda";
+import reportWebVitals from "./components/reportWebVitals";
 
 ReactDOM.render(
   <div>
-    <Header />
+    <Navbar />
   </div>,
   document.getElementById("header")
 );
 ReactDOM.render(
   <div>
     <React.StrictMode>
-      <Container />
+      <Busqueda />
     </React.StrictMode>
   </div>,
   document.getElementById("root")
