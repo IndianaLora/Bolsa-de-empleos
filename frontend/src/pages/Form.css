@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  padding: 8%;
+  max-width: 500px;
+  padding: 90px;
+  border-color: solid rgb(17, 53, 211);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 20px #97c0e7;
+  background-color: rgba(135, 200, 243, 0.8);
+  border-top: 5px solid rgb(17, 53, 211);
+  border-bottom: 5px solid #e40f0f;
+}
+#form-input {
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+}
+select {
+  color: rgb(10, 6, 1);
+  background-color: rgba(135, 200, 243, 0.8);
+}
+textarea,
+input {
+  margin: 10px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid black;
+}
+#message {
+  padding: 20px;
+  border: 2px solid grey;
+  border-radius: 5%;
+  background: transparent;
+  display: block;
+}
+#button {
+  margin-top: 10%;
+  margin-left: 20%;
+  text-align: center;
+  height: 50px;
+  width: 100px;
+  padding: 15px;
+  color: beige;
+  background-color: #e40f0f;
+  border: 2px solid rgb(128, 121, 121);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px #0d0d0e;
+  cursor: pointer;
+  font-style: oblique;
+}

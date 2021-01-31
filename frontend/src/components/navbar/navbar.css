@@ -1,0 +1,59 @@
+.navbar {
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px #666;
+}
+
+.navbar-brand {
+    color: black;
+    margin-left: 10%;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.navbar-brand #red {
+    color: rgb(216, 25, 25);
+}
+
+.navbar-brand #blue {
+    color: #3611da;
+}
+
+.itemsnav {
+    margin: 10px;
+    height: 130px;
+}
+
+ul li:hover {
+    background-color: #007bff;
+}
+
+ul li a {
+    font-size: 25px;
+}
+
+ul li a:hover {
+    color: white;
+    height: 50px;
+}
+
+.itemsnav a {
+    text-align: center;
+    margin-top: 100px;
+}
+
+ul li:nth-child(2) {
+    width: 200px;
+}
+
+.btn1 {
+    font-size: 25px;
+    margin: 10px;
+    height: 130px;
+    border: none;
+}
+ul li:nth-child(3){
+    width: 150px;
+}
