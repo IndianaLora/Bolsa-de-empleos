@@ -1,5 +1,9 @@
 * {
-  font-family: "Abril Fatface", cursive;
+  font-family: "Bree Serif", serif;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  outline: none;
 }
 .App {
   text-align: center;
@@ -15,10 +19,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-body {
-  background-color: rgb(36, 36, 46);
-}
 
+body {
+  background-image: url("2.gif");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+h1 {
+  color: rgb(7, 7, 7);
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 2%;
+  display: flex;
+  align-items: baseline;
+  padding: 1%;
+  margin-top: 0%;
+  background-color: rgb(255, 255, 255);
+}
 .App-link {
   color: #61dafb;
 }
@@ -31,41 +49,55 @@ body {
     transform: rotate(360deg);
   }
 }
-header {
-  /* position: fixed; */
-
-  border-bottom: 2px solid rgb(128, 121, 121);
-  border-radius: 5px;
-  box-shadow: 5px 10px 20px #97c0e7;
-  background-color: #493df3;
+.header {
+  position: fixed;
+  text-align: end;
+  justify-content: space-around;
+  border-bottom: 2px solid transparent;
+  box-shadow: 20px 15px 20px #105392;
+  background-color: #fcfcfc;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
 }
-header nav a {
-  display: inline-table;
-  justify-content: end;
-  align-items: flex-end;
-  color: #493df3;
-  text-decoration: none;
-  padding: 10px 20px;
+.header-nav {
+  justify-content: space-around;
+  color: #030303;
+  padding: 10px 20px 30px;
   line-height: normal;
   font-size: 20px;
   font-weight: bold;
   -webkit-transition: all 500ms ease;
   -o-transition: 500ms ease;
   transition: all 500ms ease;
-  border-bottom: 2px solid rgb(128, 121, 121);
 }
-
+header nav a {
+  font-size: 25px;
+  display: inline-flex;
+  justify-content: space-between;
+}
 header nav a:hover {
+  color: #103b97;
   background: rgb(136, 129, 163);
   border-radius: 50px;
 }
-#footer {
-  background-color: red;
+#nav {
+  color: #030303;
 }
-img {
-  width: 160px;
-  height: 80px;
-  margin-left: 2%;
-  border-radius: 20%;
-  box-shadow: 5px 10px 20px #97c0e7;
+#R {
+  color: #493df3;
+}
+#D {
+  color: red;
+}
+a {
+  color: #080808;
+}
+#footer {
+  color: #f1eeee;
+  background-color: red;
 }
