@@ -1,45 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
-import { Anchor } from "anchor";
+import { FaBullhorn, FaLongArrowAltLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { sidebarData } from "./sideBar";
 
-const Link = Anchor;
 function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
+
   return (
     <div>
-      <nav className="navbar navbar-expand-lg fixed-top">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Empleos <strong id="red">R</strong>
-            <strong id="blue">D</strong>
-          </a>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
-              <li className="itemsnav" className="nav-item">
-                <a
-                  className="nav-link "
-                  aria-curren="page"
-                  href="C:\Users\indiana\Documents\code\BolsaEmpleos\frontend\src\Container.js"
-                >
-                  Inicio
-                </a>
-              </li>
-              <li className="itemsnav" className="nav-item">
-                <a className="nav-link lg" href="#container">
-                  Sobre Nosotros
-                </a>
-              </li>
-              <li className="itemsnav" className="nav-item">
-                <a className="nav-link" href="#">
-                  Contacto
-                </a>
-              </li>
-              <button className="btn1" className="btn btn-outline-primary">
-                Publica Gratis
-              </button>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <div className="navbar">
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items">
+            <a className="navbar-brand" href="#">
+              <Link className="menu-bars">
+                <FaBullhorn />
+              </Link>
+              Empleos <strong id="red">R</strong>
+              <strong id="blue">D</strong>
+            </a>
+            {sidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.className}>
+                  <Link to={item.path}>
+                    <span>{item.tittle}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 }

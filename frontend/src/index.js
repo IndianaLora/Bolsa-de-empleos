@@ -1,25 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./Header.css";
-import "./busqueda.css";
+import "./App.css";
+import "./components/busqueda/busqueda.css";
 import Navbar from "./components/navbar/navbar";
-import Container from "./pages/Container";
-import Busqueda from "./Busqueda";
-import reportWebVitals from "./components/reportWebVitals";
+import App from "./App";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
 
 ReactDOM.render(
   <div>
-    <Navbar />
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </div>,
-  document.getElementById("header")
-);
-ReactDOM.render(
-  <div>
-    <React.StrictMode>
-      <Busqueda />
-    </React.StrictMode>
-  </div>,
+
   document.getElementById("root")
 );
-
-reportWebVitals();
