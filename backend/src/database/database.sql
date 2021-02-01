@@ -1,0 +1,36 @@
+CREATE DATABASE BOLSA_EMPLEO;
+USE BOLSA_EMPLEO;
+
+CREATE TABLE USERS (
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(150) NOT NULL,
+    password VARCHAR(150) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    rol INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE JOBS_CATEGORY (
+    id INT NOT NULL AUTO_INCREMENT,
+    category_name VARCHAR(150) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE JOBS (
+    id INT NOT NULL AUTO_INCREMENT,
+    job_title VARCHAR(200) NOT NULL,
+    job_category INT NOT NULL,
+    job_type VARCHAR(150) NOT NULL,
+    job_position VARCHAR(150) NOT NULL,
+    company_name VARCHAR(200) NOT NULL,
+    company_logo LONGBLOB NULL,
+    company_location VARCHAR(200) NOT NULL,
+    url VARCHAR(500) NULL,
+    user_id INT NOT NULL,
+    created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id)
+        REFERENCES USERS (id),
+    FOREIGN KEY (job_category)
+        REFERENCES JOBS_CATEGORY (id)
+);
