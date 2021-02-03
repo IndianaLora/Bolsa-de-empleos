@@ -10,8 +10,7 @@ export default function Registro() {
   const onSubmit = (data) => {
     axios
       .post("/api/registro", {
-        usuario: data.usuario,//poner user en vez de usuario
-
+        userName: data.usuario, 
         password: data.password,
         email: data.email,
       })
@@ -29,7 +28,7 @@ export default function Registro() {
           type="text"
           placeholder="Usuario:"
           name="usuario"
-          ref={register({ required: true })}
+          ref={register({required: true })}
         />
         {errors.usuario &&
           errors.usuario.type === "required" &&

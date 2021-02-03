@@ -1,9 +1,13 @@
 import "./Form.css";
 import { useForm } from "react-hook-form";
-
+import { useHistory } from "react-router-dom";
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const history = useHistory();
+  const onSubmit = (data) => {
+    console.log(data);
+    history.push("./components/Form/post");
+  };
 
   return (
     <div id="container" className="container">
