@@ -73,3 +73,11 @@ input {
   cursor: pointer;
   font-style: oblique;
 }
+.overlay {
+  background-color: rgb(17, 16, 16, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

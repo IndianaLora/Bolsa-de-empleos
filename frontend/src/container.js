@@ -4,9 +4,25 @@ import { useHistory } from "react-router-dom";
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
   const history = useHistory();
+  const home = () => {
+    history.push("/busqueda");
+  };
   const onSubmit = (data) => {
     console.log(data);
-    history.push("./components/Form/post");
+
+    console.log(
+      <div className="overlay">
+        <div className="popup">
+          <label>Empresa: {data.empresa}</label>
+          <div className="container-info">
+            <label>Tipo: {data.tipo}</label>
+            <label>Posicion: {data.posicion}</label>
+            <label>Ubicación: {data.ubicacion}</label>
+          </div>
+        </div>
+        <button onClick={home}>Terminar</button>
+      </div>
+    );
   };
 
   return (
@@ -14,8 +30,8 @@ export default function Container() {
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          placeholder="  Compañía:"
-          name="compañía"
+          placeholder="Empresa:"
+          name="empresa"
           ref={register({ required: true, minLength: 2 })}
           id="form-input"
         />
