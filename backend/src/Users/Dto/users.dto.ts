@@ -1,12 +1,13 @@
-interface userSignin {
+export class SignIn{
     username: string;
     password: string;
 }
 
-interface userData {
-    id?: number;
+export class Register{
     name: string;
     lastname: string;
     username: string;
     password: string;
+    email: string;
+    rol: number;
 }
