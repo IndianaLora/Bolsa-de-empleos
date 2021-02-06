@@ -6,7 +6,7 @@ export class JobsService {
 
 async getJobs(){
     const conn = await connection();
-    const query = await conn.query('SELECT * FROM JOBS');
+    const query = await conn.query('SELECT JOBS.id, JOBS.job_title, JOBS_CATEGORY.category, JOBS_TYPES.type , JOBS.job_position, JOBS.company_name, JOBS.company_logo, JOBS.company_location, JOBS.url, JOBS.created_At FROM JOBS  INNER JOIN JOBS_CATEGORY ON JOBS.job_category = JOBS_CATEGORY.id INNER JOIN JOBS_TYPES ON JOBS.job_type = JOBS_TYPES.id');
     return query[0];
 }
 
