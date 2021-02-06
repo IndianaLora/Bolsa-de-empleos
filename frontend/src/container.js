@@ -1,37 +1,17 @@
 import "./Form.css";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
-  const history = useHistory();
-  const home = () => {
-    history.push("/busqueda");
-  };
-  const onSubmit = (data) => {
-    console.log(data);
-
-    console.log(
-      <div className="overlay">
-        <div className="popup">
-          <label>Empresa: {data.empresa}</label>
-          <div className="container-info">
-            <label>Tipo: {data.tipo}</label>
-            <label>Posicion: {data.posicion}</label>
-            <label>Ubicación: {data.ubicacion}</label>
-          </div>
-        </div>
-        <button onClick={home}>Terminar</button>
-      </div>
-    );
-  };
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div id="container" className="container">
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          placeholder="Empresa:"
-          name="empresa"
+          placeholder="  Compañía:"
+          name="compañía"
           ref={register({ required: true, minLength: 2 })}
           id="form-input"
         />
