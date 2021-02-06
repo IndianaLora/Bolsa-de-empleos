@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { JobsController } from './controllers/jobs/jobs.controller';
-import { LoginController } from './controllers/login/login.controller';
-import { JobsService } from './services/jobs/jobs.service';
-import { LoginService } from './services/login/login.service';
+import { JobsController } from './Jobs/Controllers/jobs.controller';
+import { LoginController } from './Users/Controllers/users.controller';
+import { JobsService } from './Jobs/Services/jobs.service';
+import { LoginService } from './Users/Services/users.service';
 
 
 @Module({
