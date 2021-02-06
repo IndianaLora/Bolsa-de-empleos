@@ -8,4 +8,6 @@ export class Register{
     lastname: string;
     username: string;
     password: string;
+    email: string;
+    rol: number;
 }

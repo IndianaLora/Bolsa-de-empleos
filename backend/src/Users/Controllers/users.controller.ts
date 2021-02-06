@@ -8,13 +8,13 @@ export class LoginController {
 constructor(private Login: LoginService){}
 
 @Post('/signIn')
-signIn(@Body() credentials:SignIn){
-    return this.Login.signIn(credentials);
+signIn(@Body() user:SignIn){
+    return this.Login.signIn(user);
 }
 
 @Post('/register')
-register(@Body() userData:Register){
-    return this.Login.register(userData);
+register(@Body() user:Register){
+    return this.Login.register(user);
 }
 
 }

@@ -3,10 +3,12 @@ interface userSignin {
     password: string;
 }
 
-interface userData {
+interface userRegister {
     id?: number;
     name: string;
     lastname: string;
     username: string;
     password: string;
+    email:string;
+    rol:number;
 }
