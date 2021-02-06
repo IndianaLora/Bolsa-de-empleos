@@ -1,32 +1,47 @@
 import "./Form.css";
+import React, { useState } from "react";
+import ReactDom from "react-dom";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
   const history = useHistory();
   const home = () => {
     history.push("/busqueda");
   };
-  const onSubmit = (data) => {
-    console.log(data);
-
-    console.log(
-      <div className="overlay">
-        <div className="popup">
-          <label>Empresa: {data.empresa}</label>
-          <div className="container-info">
-            <label>Tipo: {data.tipo}</label>
-            <label>Posicion: {data.posicion}</label>
-            <label>Ubicación: {data.ubicacion}</label>
-          </div>
-        </div>
-        <button onClick={home}>Terminar</button>
+  // const editar = () => {
+  //   popUp.style = "visibility: hidden";
+  // };
+  function onSubmit(data) {
+    const pop = (
+      <div>
+        <img src={data.logo} />
+        <h5>Empresa: {data.empresa}</h5>
+        <h5>Tipo: {data.tipo}</h5>
+        <h5>Logo: {data.logo}</h5>
+        <h5>posicion: {data.posicion}</h5>
+        <h5>Ubicacion: {data.ubicacion}</h5>
+        <h5>categoria: {data.categoria}</h5>
+        <h5>Como aplicar: {data.posicion}</h5>
+        <h5>Email: {data.email}</h5>
+        <h5>descripcion: {data.descripcion}</h5>
+        <button className="button">Editar</button>
+        <button className="button" onClick={home}>
+          Continuar
+        </button>
       </div>
     );
-  };
+    var popUp = document.getElementById("popUp");
+    ReactDom.render(pop, popUp);
+    popUp.style = "visibility: visible";
+  }
 
   return (
     <div id="container" className="container">
+      <div className="popUp" id="popUp">
+        {" "}
+      </div>
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
@@ -47,7 +62,7 @@ export default function Container() {
         </select>
         {errors.Tipo && <p>Debe llenar este campo</p>}
         <input
-          type="text"
+          type="image"
           placeholder=" Logo (opcional):"
           name=" logo"
           ref={register}
@@ -104,11 +119,11 @@ export default function Container() {
           ref={register}
           id="form-input"
         />
-        <div id="message">
+        <div id="descripcion">
           <textarea
             placeholder="Escribe una descripcion para el puesto de trabajo"
             id="form-input"
-            name="message"
+            name="descripcion"
           >
             {" "}
           </textarea>
