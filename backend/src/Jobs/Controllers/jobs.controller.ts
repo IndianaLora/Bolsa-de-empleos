@@ -17,6 +17,11 @@ getCategory(){
     return this.Jobs.getCategory();
 }
 
+@Get('/types')
+getTypes(){
+    return this.Jobs.getTypes();
+}
+
 @Post()
 createJob(@Body() Job:Job){
     return this.Jobs.createJob(Job);

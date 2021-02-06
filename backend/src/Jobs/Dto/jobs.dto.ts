@@ -1,7 +1,7 @@
 export class Job{
     title:string;
     category:number;
-    type:string;
+    type:number;
     position:string;
     companyName:string;
     companyLogo:string;

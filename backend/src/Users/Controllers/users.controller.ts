@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { LoginService } from 'src/Users/Services/users.service';
 import { SignIn, Register } from '../Dto/users.dto'
 
@@ -15,6 +15,11 @@ signIn(@Body() user:SignIn){
 @Post('/register')
 register(@Body() user:Register){
     return this.Login.register(user);
+}
+
+@Get('/roles')
+getRoles(){
+    return this.Login.getRoles();
 }
 
 }

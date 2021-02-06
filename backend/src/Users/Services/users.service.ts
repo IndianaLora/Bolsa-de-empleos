@@ -6,7 +6,7 @@ export class LoginService {
 
 async signIn(user: userSignin){
     const conn = await connection();
-    const query = await conn.query('SELECT * FROM users WHERE username = ? AND password = ?', [user.username, user.password]);
+    const query = await conn.query('SELECT * FROM USERS WHERE username = ? AND password = ?', [user.username, user.password]);
     const verifyData:any =  query;
     if(verifyData[0].length > 0){
         return verifyData[0];
@@ -17,8 +17,14 @@ async signIn(user: userSignin){
 
 async register(user: userRegister){
     const conn = await connection();
-    const query = await conn.query('INSERT INTO users (username,password,email,rol) VALUES (?,?,?,?)', [user.name,user.password,user.email,user.rol]);
+    const query = await conn.query('INSERT INTO USERS (name,lastname,username,password,email,rol) VALUES (?,?,?,?,?,?)', [user.name,user.lastname,user.username,user.password,user.email,user.rol]);
     return "user registered";
 };
+
+async getRoles(){
+    const conn = await connection();
+    const query = await conn.query('SELECT * FROM USERS_ROLES');
+    return query[0];
+}
 
 }
