@@ -10,6 +10,10 @@ export default function Container() {
   const home = () => {
     history.push("/busqueda");
   };
+  const editar = () => {
+    var popUp = document.getElementById("popUp");
+    popUp.style = "visibility: hidden";
+  };
   const onSubmit = (data) => {
     const pop = (
       <div>
@@ -24,7 +28,9 @@ export default function Container() {
         <h5>Email: {data.email}</h5>
         <h5>descripcion: {data.descripcion}</h5>
         <div>
-          <button className="editar">Editar</button>
+          <button className="editar" onClick={editar}>
+            Editar
+          </button>
           <button className="finalizar" onClick={home}>
             Finalizar
           </button>
@@ -49,23 +55,33 @@ export default function Container() {
           ref={register({ required: true, minLength: 2 })}
           id="form-input"
         />
-        <select
-          placeholder=" Tipo :"
-          name="tipo"
-          ref={register}
-          id="form-input"
-        >
-          <option value="">Agente</option>
-          <option value="">Supervisor</option>
-          <option value=""> Gerente</option>
+        <select name="categoria" ref={register} id="form-input">
+          <option value="Agente">Agente</option>
+          <option value="Supervisor">Supervisor</option>
+          <option value="Gerente"> Gerente</option>
         </select>
         <div>
           <label for="tipo">Tiempo completo</label>
-          <input type="radio" name="tipo" value="Tiempo completo" />
+          <input
+            type="radio"
+            name="tipo"
+            value="Tiempo completo"
+            ref={register}
+          />
           <label for="tipo">Medio Tiempo</label>
-          <input type="radio" name="tipo" value="Tiempo completo" />
+          <input
+            type="radio"
+            name="tipo"
+            value="Tiempo completo"
+            ref={register}
+          />
           <label for="tipo">Free-lancer</label>
-          <input type="radio" name="tipo" value="Tiempo completo" />
+          <input
+            type="radio"
+            name="tipo"
+            value="Tiempo completo"
+            ref={register}
+          />
         </div>
 
         {errors.Tipo && <p>Debe llenar este campo</p>}
@@ -96,16 +112,15 @@ export default function Container() {
           ref={register}
           id="form-input"
         >
-          <option value=""> Santo Domingo</option>
-          <option value=""> Zona oriental</option>
+          <option value="Santo Domingo"> Santo Domingo</option>
+          <option value="Zona oriental"> Zona oriental</option>
         </select>
-        <input
-          type="text"
-          name="categoria"
-          ref={register}
-          placeholder="categoria"
-          id="form-input"
-        />
+        <select name="Categoria" ref={register} id="form-input">
+          <option value="">Categoria:</option>
+          <option value="Adquitectura">Adquitectura</option>
+          <option value="Negocios">Negocios</option>
+          <option value="Programcion"> Programcion</option>
+        </select>
         <input
           type="text"
           placeholder=" Descripción :"

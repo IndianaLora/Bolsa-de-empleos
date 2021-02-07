@@ -82,7 +82,7 @@ input {
   height: 50px;
   width: 100px;
   color: beige;
-  border: 5px solid rgb(128, 121, 121);
+  border: 5git px solid rgb(128, 121, 121);
   border-radius: 5px;
   box-shadow: 5px 10px 20px #0d0d0e;
   cursor: pointer;
@@ -129,4 +129,7 @@ label {
   margin-left: 2%;
   margin-right: 20%;
   color: rgba(120, 141, 155, 0.8);
+}
+select {
+  margin-top: 5%;
 }
