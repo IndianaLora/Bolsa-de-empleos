@@ -75,6 +75,25 @@ input {
   cursor: pointer;
   font-style: oblique;
 }
+.editar,
+.finalizar {
+  margin-top: 10%;
+  text-align: center;
+  height: 50px;
+  width: 100px;
+  color: beige;
+  border: 5px solid rgb(128, 121, 121);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px #0d0d0e;
+  cursor: pointer;
+  font-style: oblique;
+}
+.editar {
+  background-color: rgb(230, 192, 25);
+}
+.finalizar {
+  background-color: rgb(21, 146, 21);
+}
 
 .popUp {
   position: absolute;
@@ -95,7 +114,7 @@ input {
   background-color: rgba(17, 17, 17, 0.8);
   border-top: 5px solid rgb(17, 53, 211);
   border-bottom: 5px solid #e40f0f;
-  visibility: hidden
+  visibility: hidden;
 }
 img {
   margin-left: 10%;
@@ -105,3 +124,9 @@ img {
 /* #descripcion{
   border: 5px solid blue;
 } */
+label {
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right: 20%;
+  color: rgba(120, 141, 155, 0.8);
+}
