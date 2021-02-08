@@ -56,9 +56,10 @@ export default function Container() {
           id="form-input"
         />
         <select name="categoria" ref={register} id="form-input">
-          <option value="Agente">Agente</option>
-          <option value="Supervisor">Supervisor</option>
-          <option value="Gerente"> Gerente</option>
+          <option value="">Categoria:</option>
+          <option value="Adquitectura">Adquitectura</option>
+          <option value="Negocios">Negocios</option>
+          <option value="Programacion"> Programacion</option>
         </select>
         <div>
           <label for="tipo">Tiempo completo</label>
@@ -115,11 +116,11 @@ export default function Container() {
           <option value="Santo Domingo"> Santo Domingo</option>
           <option value="Zona oriental"> Zona oriental</option>
         </select>
-        <select name="Categoria" ref={register} id="form-input">
-          <option value="">Categoria:</option>
-          <option value="Adquitectura">Adquitectura</option>
-          <option value="Negocios">Negocios</option>
-          <option value="Programcion"> Programcion</option>
+        <select name="categoria" ref={register} id="form-input">
+          <option value="">Posicion</option>
+          <option value="Agente">Agente</option>
+          <option value="Supervisor">Supervisor</option>
+          <option value="Gerente"> Gerente</option>
         </select>
         <input
           type="text"
