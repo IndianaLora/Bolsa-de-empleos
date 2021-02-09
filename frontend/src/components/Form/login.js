@@ -5,21 +5,33 @@ export default function Login() {
   const { register, handleSubmit, errors } = useForm();
   console.log(errors);
   const onSubmit = (data) => {
-    let credentials = {
-      
-    }
     axios
-    .post("http://localhost:3000/login/signIn", {
-      username:data.usuario,
-      password:data.password
-    })
-    .then(function(res) {
-      console.log(JSON.parse(res.request.response));
-    })
-    .catch(function (err) {
-     console.log(JSON.parse(err.request.response));
+      .post("http://localhost:3000/login/signIn", {
+        username: data.usuario,
+        password: data.password,
+      })
+      .then(function (res) {
+        console.log(JSON.parse(res.request.response));
+      })
+      .catch(function (err) {
+        console.log(JSON.parse(err.request.response));
+      });
+
+    let p = new Promise((resolve, rejected) => {
+      if (data.usuario && data.password != null) {
+        resolve("Login succesfull");
+      } else {
+        rejected("Unsuccesfull attempt to login in");
+      }
     });
-    console.log(credentials);
+    p.then(
+      (message) => {
+        console.log(message);
+      },
+      p.catch((message) => {
+        console.log(message);
+      })
+    );
   };
   return (
     <div className="container">

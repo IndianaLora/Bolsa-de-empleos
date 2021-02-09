@@ -40,6 +40,8 @@ export default function Container() {
     var popUp = document.getElementById("popUp");
     ReactDom.render(pop, popUp);
     popUp.style = "visibility: visible";
+
+  
   };
 
   return (
