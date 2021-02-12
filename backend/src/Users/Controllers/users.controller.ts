@@ -8,7 +8,7 @@ export class LoginController {
 constructor(private Login: LoginService){}
 
 @Post('/signIn')
-signIn(@Body() user:SignIn){
+async signIn(@Body() user:SignIn){
     return this.Login.signIn(user);
 }
 
