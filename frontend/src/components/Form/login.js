@@ -6,7 +6,7 @@ export default function Login() {
   console.log(errors);
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3000/login/signIn", {
+      .post("https://bolsaempleoapi.azurewebsites.net/login/signIn", {
         username: data.usuario,
         password: data.password,
       })
