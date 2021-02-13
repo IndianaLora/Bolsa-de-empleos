@@ -1,11 +1,14 @@
 import "./Form.css";
+<<<<<<< HEAD
 import React from "react";
 import ReactDom from "react-dom";
+=======
+>>>>>>> e4bc77815c51aeeaa6132aed92cd8b7d343e58ce
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
 
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
+<<<<<<< HEAD
   const history = useHistory();
   const home = () => {
     history.push("/busqueda");
@@ -43,53 +46,33 @@ export default function Container() {
 
   
   };
+=======
+  const onSubmit = (data) => console.log(data);
+>>>>>>> e4bc77815c51aeeaa6132aed92cd8b7d343e58ce
 
   return (
     <div id="container" className="container">
-      <div className="popUp" id="popUp">
-        {" "}
-      </div>
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          placeholder="Nombre de la empresa:"
-          name="empresa"
+          placeholder="  Compañía:"
+          name="compañía"
           ref={register({ required: true, minLength: 2 })}
           id="form-input"
         />
-        <select name="categoria" ref={register} id="form-input">
-          <option value="">Categoria:</option>
-          <option value="Adquitectura">Adquitectura</option>
-          <option value="Negocios">Negocios</option>
-          <option value="Programacion"> Programacion</option>
+        <select
+          placeholder=" Tipo :"
+          name="tipo"
+          ref={register}
+          id="form-input"
+        >
+          <option value="">Agente</option>
+          <option value="">Supervisor</option>
+          <option value=""> Gerente</option>
         </select>
-        <div>
-          <label for="tipo">Tiempo completo</label>
-          <input
-            type="radio"
-            name="tipo"
-            value="Tiempo completo"
-            ref={register}
-          />
-          <label for="tipo">Medio Tiempo</label>
-          <input
-            type="radio"
-            name="tipo"
-            value="Tiempo completo"
-            ref={register}
-          />
-          <label for="tipo">Free-lancer</label>
-          <input
-            type="radio"
-            name="tipo"
-            value="Tiempo completo"
-            ref={register}
-          />
-        </div>
-
         {errors.Tipo && <p>Debe llenar este campo</p>}
         <input
-          type="image"
+          type="text"
           placeholder=" Logo (opcional):"
           name=" logo"
           ref={register}
@@ -115,15 +98,16 @@ export default function Container() {
           ref={register}
           id="form-input"
         >
-          <option value="Santo Domingo"> Santo Domingo</option>
-          <option value="Zona oriental"> Zona oriental</option>
+          <option value=""> Santo Domingo</option>
+          <option value=""> Zona oriental</option>
         </select>
-        <select name="categoria" ref={register} id="form-input">
-          <option value="">Posicion</option>
-          <option value="Agente">Agente</option>
-          <option value="Supervisor">Supervisor</option>
-          <option value="Gerente"> Gerente</option>
-        </select>
+        <input
+          type="text"
+          name="categoria"
+          ref={register}
+          placeholder="categoria"
+          id="form-input"
+        />
         <input
           type="text"
           placeholder=" Descripción :"
@@ -131,11 +115,13 @@ export default function Container() {
           ref={register}
           id="form-input"
         />
-        <select name="aplicar" ref={register} id="form-input">
-          <option value="">Como aplicar :</option>
-          <option value="">Correo electronico</option>
-          <option value="">Numero telefonico</option>
-        </select>
+        <input
+          type="text"
+          placeholder="Cómo aplicar:"
+          name="comoAplicar"
+          ref={register}
+          id="form-input"
+        />
         <input
           type="text"
           placeholder=" Email (Compañía):"
@@ -143,11 +129,11 @@ export default function Container() {
           ref={register}
           id="form-input"
         />
-        <div id="descripcion">
+        <div id="message">
           <textarea
             placeholder="Escribe una descripcion para el puesto de trabajo"
             id="form-input"
-            name="descripcion"
+            name="message"
           >
             {" "}
           </textarea>
