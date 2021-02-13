@@ -1,54 +1,9 @@
 import "./Form.css";
-<<<<<<< HEAD
-import React from "react";
-import ReactDom from "react-dom";
-=======
->>>>>>> e4bc77815c51aeeaa6132aed92cd8b7d343e58ce
 import { useForm } from "react-hook-form";
 
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
-<<<<<<< HEAD
-  const history = useHistory();
-  const home = () => {
-    history.push("/busqueda");
-  };
-  const editar = () => {
-    var popUp = document.getElementById("popUp");
-    popUp.style = "visibility: hidden";
-  };
-  const onSubmit = (data) => {
-    const pop = (
-      <div>
-        <img src={data.logo} />
-        <h5>Empresa: {data.empresa}</h5>
-        <h5>Tipo: {data.tipo}</h5>
-        <h5>Logo: {data.logo}</h5>
-        <h5>posicion: {data.posicion}</h5>
-        <h5>Ubicacion: {data.ubicacion}</h5>
-        <h5>categoria: {data.categoria}</h5>
-        <h5>Como aplicar: {data.posicion}</h5>
-        <h5>Email: {data.email}</h5>
-        <h5>descripcion: {data.descripcion}</h5>
-        <div>
-          <button className="editar" onClick={editar}>
-            Editar
-          </button>
-          <button className="finalizar" onClick={home}>
-            Finalizar
-          </button>
-        </div>
-      </div>
-    );
-    var popUp = document.getElementById("popUp");
-    ReactDom.render(pop, popUp);
-    popUp.style = "visibility: visible";
-
-  
-  };
-=======
   const onSubmit = (data) => console.log(data);
->>>>>>> e4bc77815c51aeeaa6132aed92cd8b7d343e58ce
 
   return (
     <div id="container" className="container">
