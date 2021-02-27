@@ -19,7 +19,7 @@ export default function Registro() {
         },
       })
       .then(function (response) {
-        console.log(response.data);
+        console.log(response);
       })
       .catch(function (error) {
         console.log(error);

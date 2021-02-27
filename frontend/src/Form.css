@@ -68,6 +68,13 @@ input {
   box-shadow: 5px 10px 20px #0d0d0e;
   cursor: pointer;
 }
+.icon-r {
+  width: 20px;
+  height: 20px;
+  margin-left: 2%;
+  color: black;
+  background-color: rgb(8, 0, 0);
+}
 .editar,
 .finalizar {
   margin-top: 10%;
@@ -80,6 +87,12 @@ input {
   box-shadow: 5px 10px 20px #0d0d0e;
   cursor: pointer;
   font-style: oblique;
+}
+.text-black {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20%;
+  text-shadow: 5px 10px 20px #0d0d0e;
 }
 .editar {
   background-color: rgb(230, 192, 25);

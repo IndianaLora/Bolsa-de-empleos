@@ -9,18 +9,22 @@ import "./busqueda.css";
 export default function Busqueda() {
   const [jobs, setJobs] = useState();
 
-  useEffect(() => {
-    let jobsUrl = "http://localhost:3001/api/jobs";
-    axios
-      .get(jobsUrl, {})
-      .then(function (res) {
-        console.log(setJobs(res.request.response));
-       
-      })
-      .catch(function (err) {
-        console.log(JSON.parse(err.request.response + "no funciona"));
-      });
-  });
+  const Call =() => {
+    return useEffect(() => {
+      let jobsUrl = "http://localhost:3001/api/jobs";
+      axios
+        .get(jobsUrl)
+        .then(function (response) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    });
+  };
+
   return (
     <div>
       <div>
