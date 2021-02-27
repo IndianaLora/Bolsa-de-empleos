@@ -1,95 +1,33 @@
 import "./Form.css";
-import React, { useState } from "react";
-import ReactDom from "react-dom";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
 
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
-  const history = useHistory();
-  const home = () => {
-    history.push("/busqueda");
-  };
-  const editar = () => {
-    var popUp = document.getElementById("popUp");
-    popUp.style = "visibility: hidden";
-  };
-  const onSubmit = (data) => {
-    const pop = (
-      <div>
-        <img src={data.logo} />
-        <h5>Empresa: {data.empresa}</h5>
-        <h5>Tipo: {data.tipo}</h5>
-        <h5>Logo: {data.logo}</h5>
-        <h5>posicion: {data.posicion}</h5>
-        <h5>Ubicacion: {data.ubicacion}</h5>
-        <h5>categoria: {data.categoria}</h5>
-        <h5>Como aplicar: {data.posicion}</h5>
-        <h5>Email: {data.email}</h5>
-        <h5>descripcion: {data.descripcion}</h5>
-        <div>
-          <button className="editar" onClick={editar}>
-            Editar
-          </button>
-          <button className="finalizar" onClick={home}>
-            Finalizar
-          </button>
-        </div>
-      </div>
-    );
-    var popUp = document.getElementById("popUp");
-    ReactDom.render(pop, popUp);
-    popUp.style = "visibility: visible";
-
-  
-  };
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div id="container" className="container">
-      <div className="popUp" id="popUp">
-        {" "}
-      </div>
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          placeholder="Nombre de la empresa:"
-          name="empresa"
+          placeholder="  Compañía:"
+          name="compañía"
           ref={register({ required: true, minLength: 2 })}
           id="form-input"
         />
-        <select name="categoria" ref={register} id="form-input">
-          <option value="">Categoria:</option>
-          <option value="Adquitectura">Adquitectura</option>
-          <option value="Negocios">Negocios</option>
-          <option value="Programacion"> Programacion</option>
+        <select
+          placeholder=" Tipo :"
+          name="tipo"
+          ref={register}
+          id="form-input"
+        >
+          <option value="">Agente</option>
+          <option value="">Supervisor</option>
+          <option value=""> Gerente</option>
         </select>
-        <div>
-          <label for="tipo">Tiempo completo</label>
-          <input
-            type="radio"
-            name="tipo"
-            value="Tiempo completo"
-            ref={register}
-          />
-          <label for="tipo">Medio Tiempo</label>
-          <input
-            type="radio"
-            name="tipo"
-            value="Tiempo completo"
-            ref={register}
-          />
-          <label for="tipo">Free-lancer</label>
-          <input
-            type="radio"
-            name="tipo"
-            value="Tiempo completo"
-            ref={register}
-          />
-        </div>
-
         {errors.Tipo && <p>Debe llenar este campo</p>}
         <input
-          type="image"
+          type="text"
           placeholder=" Logo (opcional):"
           name=" logo"
           ref={register}
@@ -115,15 +53,16 @@ export default function Container() {
           ref={register}
           id="form-input"
         >
-          <option value="Santo Domingo"> Santo Domingo</option>
-          <option value="Zona oriental"> Zona oriental</option>
+          <option value=""> Santo Domingo</option>
+          <option value=""> Zona oriental</option>
         </select>
-        <select name="categoria" ref={register} id="form-input">
-          <option value="">Posicion</option>
-          <option value="Agente">Agente</option>
-          <option value="Supervisor">Supervisor</option>
-          <option value="Gerente"> Gerente</option>
-        </select>
+        <input
+          type="text"
+          name="categoria"
+          ref={register}
+          placeholder="categoria"
+          id="form-input"
+        />
         <input
           type="text"
           placeholder=" Descripción :"
@@ -131,11 +70,13 @@ export default function Container() {
           ref={register}
           id="form-input"
         />
-        <select name="aplicar" ref={register} id="form-input">
-          <option value="">Como aplicar :</option>
-          <option value="">Correo electronico</option>
-          <option value="">Numero telefonico</option>
-        </select>
+        <input
+          type="text"
+          placeholder="Cómo aplicar:"
+          name="comoAplicar"
+          ref={register}
+          id="form-input"
+        />
         <input
           type="text"
           placeholder=" Email (Compañía):"
@@ -143,11 +84,11 @@ export default function Container() {
           ref={register}
           id="form-input"
         />
-        <div id="descripcion">
+        <div id="message">
           <textarea
             placeholder="Escribe una descripcion para el puesto de trabajo"
             id="form-input"
-            name="descripcion"
+            name="message"
           >
             {" "}
           </textarea>
