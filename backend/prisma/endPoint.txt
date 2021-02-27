@@ -1,0 +1,107 @@
+endPoint 
+job endPoint 
+
+    getTrabajosRecientes                             get: /api/jobs          -------->         CHECK    
+    getTrabajosPorCategorias (paginada)              get: /api/jobs          -------->         CHECK
+    getTrabajosPorCategorias (paginada)              get: /api/jobs          -------->         CHECK
+    searchTrabajosRecientes                          get: /api/jobs          
+    searchTrabajosPorCategorias (paginada)           get: /api/jobs          
+    getTrabajoPorId    get: /api/jobs                                        -------->         CHECK
+    postTrabajo        post: /api/jobs
+    updateTrabajo      update: /api/jobs
+    deleteTrabajo      delete: /api/jobs
+jobCategory
+    getCategorias       get: /api/job-categories                             -------->         CHECK
+jobType
+    getTypes            get: /api/job-types                                  -------->         CHECK
+User
+    postRegistro        post:/api/users/register                             -------->         NOT WORKING  
+    iniciarSesion()     post:/api/users/login                                -------->         NOT WORKING
+    cerraSesion()       get:/api/users/logout                                -------->         NOT WORKING
+setting
+    getSetting           get: /api/settings
+    updateSetting        put: /api/settings
+
+                  
+                  
+            
+                
+                
+                
+                
+                  
+                  
+                  
+                 
+                
+                
+                  
+                 
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+               
+                  
+                
+                  
+                  
+                  
+                  
+                  
+      
+                
+                
+            
+                
+               
+               
+                
+                
+                
+                
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+    verbos http para hacer un Rest API:
+    R get
+    C post
+    U put
+    D delete

@@ -1,0 +1,60 @@
+* {
+  color: white;
+}
+.regis-img {
+  width: 220px;
+  height: 150px;
+}
+.text-center {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 7%;
+}
+.login-box {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40%;
+  margin-top: 8%;
+  margin-bottom: 2%;
+  padding: 5%;
+  max-width: 400px;
+  padding: 90px;
+  color: #d1caca;
+  border-color: solid rgb(17, 53, 211);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 20px #97c0e7;
+  background-color: rgba(23, 25, 26, 0.8);
+  border-top: 5px solid rgb(17, 53, 211);
+  border-bottom: 5px solid #e40f0f;
+  opacity: 50;
+}
+.box {
+  position: absolute;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin-left: 55%;
+  margin-top: 0%;
+  margin-bottom: 2%;
+  padding: 5%;
+  max-width: 700px;
+  padding: 90px;
+  color: #d1caca;
+  border-color: solid rgb(17, 53, 211);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 20px #97c0e7;
+  background-color: rgba(23, 25, 26, 0.8);
+  border-top: 5px solid rgb(17, 53, 211);
+  border-bottom: 5px solid #e40f0f;
+  opacity: 50;
+}
+#c-tag {
+  color: rgb(206, 198, 198);
+  background-color: rgba(184, 21, 21, 0.8);
+}
+.regiss {
+  color: #97c0e7;
+  background-color: rgba(17, 17, 17, 0.8);
+  border: none;
+}
