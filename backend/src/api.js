@@ -56,8 +56,8 @@ app.post("/api/users/register", async (req, res) => {
   console.log(req.body);
   const userRegister = await prisma.user.create({
     data: {
-      username: req.body.username,
-      password: req.body.password,
+      username: req.body.data.username,
+      password: req.body.data.password,
       roleId: 1,
     },
   });

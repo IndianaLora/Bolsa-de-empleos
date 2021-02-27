@@ -21,13 +21,13 @@ code {
   width: 100%;
 }
 #form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-direction: row;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 5%;
-  max-width: 400px;
-  padding: 90px;
+  max-width: 1000px;
+  padding: 100px;
   border-color: solid rgb(17, 53, 211);
   border-radius: 5px;
   box-shadow: 0px 0px 20px 20px #97c0e7;
@@ -59,21 +59,14 @@ input {
   display: block;
 }
 .button {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10%;
-  margin-left: 20%;
+  margin-top: 20%;
+  height: 60px;
   text-align: center;
-  height: 50px;
-  width: 100px;
-  padding: 15px;
   color: beige;
-  background-color: #e22424;
   border: 2px solid rgb(128, 121, 121);
   border-radius: 5px;
   box-shadow: 5px 10px 20px #0d0d0e;
   cursor: pointer;
-  font-style: oblique;
 }
 .editar,
 .finalizar {

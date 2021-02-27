@@ -6,21 +6,23 @@ import "./users.css";
 
 export default function Registro() {
   const { register, handleSubmit, errors } = useForm();
-
   const history = useHistory();
+
+  const registerUrl = "http://localhost:3001/api/users/register";
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/api/users/register", {
-        username: data.username,
-        password: data.password,
+      .post(registerUrl, {
+        data: {
+          username: data.username,
+          password: data.password,
+        },
       })
-      .then(function (res) {
-        console.log(JSON.parse(res.request.response + "funciona"));
-        history.push("/container");
+      .then(function (response) {
+        console.log(response.data);
       })
-      .catch(function (err) {
-        console.log(err+"no funciona");
+      .catch(function (error) {
+        console.log(error);
       });
   };
   return (

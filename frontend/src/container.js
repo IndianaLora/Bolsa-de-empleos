@@ -94,7 +94,7 @@ export default function Container() {
             {" "}
           </textarea>
         </div>
-        <input type="submit" value="Enviar" className="button" />
+        <input type="submit" value="Enviar" className="btn btn-block btn-info button" />
       </form>
     </div>
   );
