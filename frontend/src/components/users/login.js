@@ -20,12 +20,14 @@ export default function Login() {
           password: data.password,
         },
       })
-      .then((response) => {
-        console.log(response.data);
+      .then(function (res) {
+        console.log(JSON.parse(res.request.response +"funciona"));
+        history.push("/busqueda");
       })
       .catch(function (err) {
-        console.log("mal");
+        console.log(JSON.parse(err.request.response + "no funciona"));
       });
+      
   };
 
   return (

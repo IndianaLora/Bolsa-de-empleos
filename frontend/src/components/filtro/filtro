@@ -1,0 +1,12 @@
+ let KeySearch = "http://localhost:3001/api/api/job-categories";
+    axios
+      .get(keySearch, {
+     
+      })
+      .then(function (res) {
+        console.log(JSON.parse(res.request.response + "funciona"));
+        history.push("/busqueda");
+      })
+      .catch(function (err) {
+        console.log(JSON.parse(err.request.response + "no funciona"));
+      });

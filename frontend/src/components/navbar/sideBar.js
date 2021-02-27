@@ -16,9 +16,5 @@ export const sidebarData = [
     path: "/login",
     className: "nav-text",
   },
-  {
-    tittle: "Sobre nosotros",
-    path: "#",
-    className: "nav-text",
-  },
+
 ];

@@ -1,9 +1,8 @@
 import Busqueda from "./components/busqueda/Busqueda";
 import Container from "./container";
 import Navbar from "./components/navbar/navbar";
-import Cards from "./components/cards/cards";
-import Login from "./components/Form/login";
-import Registro from "./components/Form/registro";
+import Login from "./components/users/login";
+import Registro from "./components/users/registro";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
@@ -12,15 +11,13 @@ export default function App() {
       <div>
         <Navbar />
       </div>
+      <Route path="/" exact component={Busqueda} />
       <Switch>
         <Route path="/container">
           <Container />
         </Route>
         <Route path="/busqueda">
           <Busqueda />
-          <div>
-            <Cards />
-          </div>
         </Route>
         <Route path="/login">
           <Login />

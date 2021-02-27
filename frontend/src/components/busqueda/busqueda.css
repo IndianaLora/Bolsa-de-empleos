@@ -1,68 +1,63 @@
-
-
-.navbar2 {
-  display:flex;
-  margin-top: 90px;
-  margin-bottom: 100px;
-  height: 10vh;
-  font-family: Arial, Helvetica, sans-serif;
-  background: none;
-  font-size: 20px;
+.card-body {
+  display: grid;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  width: 1100px;
+  height: 200px;
+  color: white;
+  background-color: #079cc2;
+}
+body {
+  background-image: url("fondo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.text-center {
+  margin-left: 13%;
+  margin-top: 15%;
 }
 
 .h1 {
-  margin-top: 50px;
-  font-size: 70px;
-  margin-left: 500px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
   color: rgb(17, 8, 8);
   background-color: transparent;
 }
+.select1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: 20%;
+  max-width: 100px;
 
+  background-color: #def3f8;
+}
 .pa {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   margin-top: 2px;
   font-size: 40px;
+  margin-left: 7%;
+
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
-  margin-left: 300px;
-  color: white;
-}
-
-#fondoid {
- 
-  width: 100vh;
-  height: 100vh;
-
-  
-}
-
-.form-select {
-  padding: 18px;
-  margin-left: 20%;
-  width: 350px;
-  padding-left: 20px;
-  border-radius: 20px;
-  outline: none;
+  color: rgb(10, 9, 9);
 }
 
 .select1 {
-  margin-left: 2px;
-  border-radius: 20px;
-  outline: none;
-  padding-left: 35px;
-}
-
-.select2 {
-  margin-left: 2px;
-  border-radius: 20px;
-  padding-left: 35px;
-  outline: none;
+  max-width: 50px;
 }
 
 .btn2 {
   margin-left: 2px;
   background: #079cc2;
-  min-width: 300px;
+  max-width: 50px;
   border-radius: 10px;
 }
 

@@ -1,6 +1,4 @@
 import axios from "axios";
-import ReactDOM from "react-dom";
-import { Alert } from "antd";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { FaWpforms } from "react-icons/fa";
@@ -18,11 +16,11 @@ export default function Registro() {
         password: data.password,
       })
       .then(function (res) {
-        console.log(JSON.parse(res.request.response));
-        history.push("/busqueda");
+        console.log(JSON.parse(res.request.response + "funciona"));
+        history.push("/container");
       })
       .catch(function (err) {
-        console.log(JSON.parse(err.request.response + "no funciona"));
+        console.log(err+"no funciona");
       });
   };
   return (
