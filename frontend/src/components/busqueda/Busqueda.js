@@ -34,37 +34,36 @@ export default function Busqueda() {
         <p className="pa">
           Selecciona el area de trabajo que quieres buscar y la ciudad
         </p>
-
+        <button className="btn btn-danger  more-jobs" type="submit">
+          Mas trabajos
+        </button>
         <input
-          className="form-select"
+          className="key-search"
           type="search"
           placeholder="Buscar Empleos"
         />
-
-        {/* 
-        <select className="select1">
-          <option selected>Seleccione categoria</option>
-        </select> */}
-        {jobs.map((job) => {
-          return (
-            <div className="card-">
-              <label>{job.categoryId}</label>
-              <div className="card-body">
-                <h4 className="card-tittle">{job.companyLocation}</h4>
-                <h4 className="card-tittle">{job.companyName}</h4>
-                <h5 className="card-tittle">{job.position}</h5>
-                <p className="card-text">
-                  Some quick exmple text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+        <button className="btn btn-primary search-jobs" type="submit">
+          Buscar
+        </button>
+        <div>
+          {jobs.map((job) => {
+            return (
+              <div className="card-">
+                <label>{job.categoryId}</label>
+                <div className="card-body">
+                  <h4 className="card-tittle">{job.companyLocation}</h4>
+                  <h4 className="card-tittle">{job.companyName}</h4>
+                  <h5 className="card-tittle">{job.position}</h5>
+                  <p className="card-text">
+                    Some quick exmple text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-      <button className="btn btn-primary" type="submit">
-        Buscar
-      </button>
     </div>
   );
 }

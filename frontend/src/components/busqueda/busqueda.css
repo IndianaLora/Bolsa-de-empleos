@@ -1,18 +1,43 @@
 .card-body {
   display: grid;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 15%;
   width: 1100px;
   height: 200px;
   color: white;
-  background-color: #079cc2;
+  background-color: #19768d;
 }
 body {
   background-image: url("fondo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.search-jobs {
+  height: 70px;
+  width: 80px;
+  margin-left: 0.5%;
+}
+.more-jobs {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 60%;
+  margin-bottom: 90%;
+  height: 70px;
+  width: 300px;
+
+}
+.key-search {
+  margin-top: 5%;
+  margin-left: 20%;
+  height: 70px;
+  width: 300px;
+  border-radius: 10%;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: rgba(17, 17, 17, 0.2);
+  border-bottom: 5px solid #1467ac;
 }
 .text-center {
   margin-left: 13%;
@@ -49,10 +74,7 @@ body {
   font-size: 40px;
   margin-left: 7%;
 
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
-  color: rgb(10, 9, 9);
+  color: rgb(89, 101, 139);
 }
 
 .select1 {
