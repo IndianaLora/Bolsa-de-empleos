@@ -1,8 +1,10 @@
 const express = require("express");
+const bcrypt = require("bcrypt");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 const { PrismaClient } = require("@prisma/client");
 
+const privateKey = "kjsandkasndkasnd;askdasdkasdjhqwi";
 const app = express();
 const port = 3001;
 const prisma = new PrismaClient();
@@ -54,21 +56,72 @@ app.post("/api/jobs", async (req, res) => {
 app.use(bodyParser.json());
 
 app.post("/api/users/register", async (req, res) => {
-  console.log(req.body);
-  // todo: encryptar password
-  const userRegister = await prisma.user.create({
-    data: {
-      username: req.body.data.username,
-      password: req.body.data.password,
-      roleId: 1,
+  const username = req.body.data.username;
+  const exist = await prisma.user.findFirst({
+    where: {
+      username: {
+        equals: username,
+      },
     },
   });
-  res.send(userRegister);
+  if (exist) {
+    throw new Error("Usuario ya existe");
+  }
+  bcrypt.hash(req.body.data.password, 10, async function (err, hash) {
+    if (err) {
+      throw new Error("No se pudo hashear el password");
+    }
+    const userRegister = await prisma.user.create({
+      data: {
+        username: req.body.data.username,
+        password: hash,
+        roleId: 1,
+      },
+    });
+    res.send(userRegister);
+  });
 });
 
-app.get("/api/auth/login", async (req, res) => {
-  const userLogin = await prisma.user.findMany();
-  res.send(userLogin);
+app.post("/api/auth/login", async (req, res) => {
+  const username = req.body.data.username;
+  const user = await prisma.user.findFirst({
+    where: {
+      username: {
+        equals: username,
+      },
+    },
+  });
+
+  if (!user) {
+    return res.status(500).json({
+      error: "Credenciales invalidas",
+    });
+  }
+  bcrypt.compare(req.body.data.password, user.password, function (err, result) {
+    if (err || !result) {
+      return res.status(500).json({
+        error: "Credenciales invalidas",
+      });
+    }
+    jwt.sign(
+      { id: user.id },
+      privateKey,
+      { algorithm: "RS256" },
+      function (err, token) {
+        if (err) {
+          return res.status(500).json({
+            error: "Credenciales invalidas",
+          });
+        }
+        res.send({
+          token: token,
+        });
+      }
+    );
+  });
+  return res.status(500).json({
+    error: "Credenciales invalidas",
+  });
 });
 
 app.get("/api/auth/check", async (req, res) => {

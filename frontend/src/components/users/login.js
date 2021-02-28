@@ -12,22 +12,20 @@ export default function Login() {
   //La informacion Formulario login se uarda en 'data'
 
   const onSubmit = (data) => {
-    let loginUrl = "http://localhost:3001/api/users/login";
+    let loginUrl = "http://localhost:3001/api/auth/login";
     axios
-      .get(loginUrl, {
-        params: {
-          username: data.usuario,
+      .post(loginUrl, {
+        data: {
+          username: data.username,
           password: data.password,
         },
       })
       .then(function (res) {
-        console.log(JSON.parse(res.request.response +"funciona"));
         history.push("/busqueda");
       })
       .catch(function (err) {
-        console.log(JSON.parse(err.request.response + "no funciona"));
+        console.error(err);
       });
-      
   };
 
   return (
@@ -39,7 +37,7 @@ export default function Login() {
         <input
           type="text"
           placeholder="Usuario:"
-          name="usuario"
+          name="username"
           ref={register({ required: true })}
         />
 

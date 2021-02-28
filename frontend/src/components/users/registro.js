@@ -2,6 +2,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { FaWpforms } from "react-icons/fa";
+
 import "./users.css";
 
 export default function Registro() {
@@ -55,7 +56,6 @@ export default function Registro() {
           type="submit"
           value="Enviar"
           className="btn btn-block btn-primary"
-          onClick={onSubmit}
         />
       </form>
     </div>
