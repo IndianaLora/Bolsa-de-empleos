@@ -55,6 +55,7 @@ app.use(bodyParser.json());
 
 app.post("/api/users/register", async (req, res) => {
   console.log(req.body);
+  // todo: encryptar password
   const userRegister = await prisma.user.create({
     data: {
       username: req.body.data.username,
@@ -65,20 +66,16 @@ app.post("/api/users/register", async (req, res) => {
   res.send(userRegister);
 });
 
-app.get("/api/users/login", async (req, res) => {
+app.get("/api/auth/login", async (req, res) => {
   const userLogin = await prisma.user.findMany();
   res.send(userLogin);
 });
 
-app.post("/api/users/Sigin", async (req, res) => {
-  const userSigin = await prisma.user.findMany();
-  res.send(userSigin);
-});
-app.get("/api/users/check", async (req, res) => {
+app.get("/api/auth/check", async (req, res) => {
   const check = await prisma.user.findMany();
   res.send(check);
 });
-app.get("/api/users/logout", async (req, res) => {
+app.get("/api/auth/logout", async (req, res) => {
   const userlogout = await prisma.user.findMany();
   res.send(userlogout);
 });

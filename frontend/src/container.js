@@ -74,6 +74,7 @@ export default function Container() {
         </div>
         {/* {errors.Tipo && <p>Debe llenar este campo</p>} */}
         <label>lOGO</label>
+        //multipart
         <input
           type="file"
           placeholder=" Logo (opcional):"
