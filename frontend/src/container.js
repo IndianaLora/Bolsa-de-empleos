@@ -45,6 +45,9 @@ export default function Container() {
         console.log(error);
       });
     console.log(data);
+
+    var popUpShow = document.getElementById("popUp");
+    popUpShow.className("popUp");
   };
 
   if (jobType === undefined || jobCategories === undefined) {
@@ -52,6 +55,17 @@ export default function Container() {
   }
   return (
     <div id="container" className="container">
+      <div className="popUp" id="popUp">
+        <h5>{}</h5>
+        <h5>Wey</h5>
+        <h5>Wey</h5>
+        <h5>Wey</h5>
+        <h5>Wey</h5>
+        <h5>Wey</h5>
+        <h5>Wey</h5>
+        <h5>Wey</h5>
+      </div>
+      ;
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <h2 className="text-black">Postea tu trabajo</h2>
         <input
@@ -126,19 +140,6 @@ export default function Container() {
         </div>
         <input type="submit" className="btn btn-block btn-info button" />
       </form>
-      {/* <div className="popUp" id="popUp">
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-          <h5>Wey</h5>
-        </div>
-        {/* 
-    var popUpShow = document.getElementById("popUp");
-    popUpShow.className("visibilityx"); */}{" "}
     </div>
   );
 }

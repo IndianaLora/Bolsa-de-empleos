@@ -21,7 +21,7 @@ export default function Login() {
         },
       })
       .then(function (res) {
-        history.push("/busqueda");
+        history.push("/container");
       })
       .catch(function (err) {
         console.error(err);

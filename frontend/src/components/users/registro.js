@@ -21,6 +21,7 @@ export default function Registro() {
       })
       .then(function (response) {
         console.log(response);
+        history.push("/login");
       })
       .catch(function (error) {
         console.log(error);
