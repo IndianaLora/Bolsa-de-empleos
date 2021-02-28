@@ -23,7 +23,7 @@ export default function Container() {
   }, []);
 
   const onSubmit = (data) => {
-    //popUp
+    console.log(data);
     const jobsUrl = "http://localhost:3001/api/jobs";
     axios
       .post(jobsUrl, {
@@ -31,7 +31,7 @@ export default function Container() {
           title: data.title,
           position: data.position,
           companyName: data.companyName,
-          companyLogo: data.companyLogo || "",
+          companyLogo: data.companyLogo,
           companyLocation: data.companyLocation,
           url: data.url,
           categoryId: 36,
@@ -58,7 +58,7 @@ export default function Container() {
           type="text"
           placeholder="Compañía:"
           name="companyName"
-          ref={register({ required: true })}
+          ref={register}
           id="form-input"
         />
         <div>
@@ -66,11 +66,7 @@ export default function Container() {
             return (
               <>
                 <label>{jobTypex.name}</label>
-                <input
-                  type="radio"
-                  name={jobTypex.id}
-                  ref={register({ required: true })}
-                />
+                <input type="radio" name={jobTypex.id} ref={register} />
                 <br />
               </>
             );
@@ -113,8 +109,8 @@ export default function Container() {
         />
         <input
           type="text"
-          placeholder=" Email (Compañía):"
-          name="email"
+          placeholder="Url (Compañía):"
+          name="url"
           ref={register}
           id="form-input"
         />
@@ -127,13 +123,9 @@ export default function Container() {
             className="text-white"
           />
         </div>
-        <input
-          type="submit"
-          value="Enviar"
-          onClick={onSubmit}
-          className="btn btn-block btn-info button"
-        />
-        {/* <div className="popUp" id="popUp">
+        <input type="submit" className="btn btn-block btn-info button" />
+      </form>
+      {/* <div className="popUp" id="popUp">
           <h5>Wey</h5>
           <h5>Wey</h5>
           <h5>Wey</h5>
@@ -146,7 +138,6 @@ export default function Container() {
         {/* 
     var popUpShow = document.getElementById("popUp");
     popUpShow.className("visibilityx"); */}{" "}
-      </form>
     </div>
   );
 }

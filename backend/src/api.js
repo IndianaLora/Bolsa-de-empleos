@@ -37,15 +37,15 @@ app.post("/api/jobs", async (req, res) => {
   const jobs = await prisma.job.create({
     data: {
       title: req.body.data.title,
-      position: req.body.position,
-      companyName: req.body.companyName,
-      companyLogo: req.body.companyLogo || "",
-      companyLocation: req.body.companyLocation,
-      url: req.body.url,
+      position: req.body.data.position,
+      companyName: req.body.data.companyName,
+      companyLogo: "", //todo implement this
+      companyLocation: req.body.data.companyLocation,
+      url: req.body.data.url,
       createdAt: new Date(),
       userId: 1, //todo replace this
-      categoryId: req.body.categoryId,
-      typeId: req.body.typeId,
+      categoryId: req.body.data.categoryId,
+      typeId: req.body.data.typeId,
     },
   });
   res.send(jobs);
@@ -70,7 +70,15 @@ app.get("/api/users/login", async (req, res) => {
   res.send(userLogin);
 });
 
-app.post("/api/users/logout", async (req, res) => {
+app.post("/api/users/Sigin", async (req, res) => {
+  const userSigin = await prisma.user.findMany();
+  res.send(userSigin);
+});
+app.get("/api/users/check", async (req, res) => {
+  const check = await prisma.user.findMany();
+  res.send(check);
+});
+app.get("/api/users/logout", async (req, res) => {
   const userlogout = await prisma.user.findMany();
   res.send(userlogout);
 });
