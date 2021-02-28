@@ -23,7 +23,8 @@ app.get("/api/jobs", async (req, res) => {
   const page = Math.max(parseInt(req.query.page, 10), 1); //10 sistema decimal
 
   const jobs = await prisma.job.findMany({
-    skip: parseInt((page - 1) * 10),
+    //parseInt((page - 1) * 10)
+    skip: 10,
     take: 10,
   });
   res.send(jobs);
@@ -35,7 +36,7 @@ app.post("/api/jobs", async (req, res) => {
   console.log(req.body);
   const jobs = await prisma.job.create({
     data: {
-      title: req.body.title,
+      title: req.body.data.title,
       position: req.body.position,
       companyName: req.body.companyName,
       companyLogo: req.body.companyLogo || "",

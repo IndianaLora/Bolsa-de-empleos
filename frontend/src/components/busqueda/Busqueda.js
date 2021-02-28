@@ -7,23 +7,24 @@ import "./busqueda.css";
 //api/jobs
 
 export default function Busqueda() {
+  const [jobCategories, setJobCategories] = useState();
   const [jobs, setJobs] = useState();
 
-  const Call =() => {
-    return useEffect(() => {
-      let jobsUrl = "http://localhost:3001/api/jobs";
-      axios
-        .get(jobsUrl)
-        .then(function (response) {
-          // handle success
-          console.log(response);
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        });
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/job-categories").then((response) => {
+      setJobCategories(response.data);
     });
-  };
+  }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/jobs").then((response) => {
+      setJobs(response.data);
+    });
+  }, []);
+
+  if (jobCategories === undefined || jobs === undefined) {
+    return "La pagina esta cargando";
+  }
 
   return (
     <div>
@@ -44,28 +45,22 @@ export default function Busqueda() {
         <select className="select1">
           <option selected>Seleccione categoria</option>
         </select> */}
-        <h1 className="text-center">Programacion</h1>
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick exmple text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" className="btn btn-primary btn-group-sm">
-            Go somewhere
-          </a>
-        </div>
-        <h1 className="text-center">Mecatronica</h1>
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick exmple text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" className="btn btn-primary btn-group-sm">
-            Go somewhere
-          </a>
-        </div>
+        {jobs.map((job) => {
+          return (
+            <div className="card-">
+              <label>{job.categoryId}</label>
+              <div className="card-body">
+                <h4 className="card-tittle">{job.companyLocation}</h4>
+                <h4 className="card-tittle">{job.companyName}</h4>
+                <h5 className="card-tittle">{job.position}</h5>
+                <p className="card-text">
+                  Some quick exmple text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
       <button className="btn btn-primary" type="submit">
         Buscar

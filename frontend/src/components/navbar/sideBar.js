@@ -7,7 +7,7 @@ export const sidebarData = [
     className: "nav-text",
   },
   {
-    tittle: "Publica un empleo",
+    tittle: "Postea un empleo",
     path: "/Container",
     className: "nav-text",
   },

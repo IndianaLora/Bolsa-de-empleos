@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { FaFileImport } from "react-icons/fa";
 import axios from "axios";
 import "./Form.css";
 //letras blancas
@@ -8,6 +7,20 @@ import "./Form.css";
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
   const [jobType, setJobtype] = useState();
+  const [jobs, setJobs] = useState();
+  const [jobCategories, setJobCategories] = useState();
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/job-categories").then((response) => {
+      setJobCategories(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/job-types").then((response) => {
+      setJobtype(response.data);
+    });
+  }, []);
 
   const onSubmit = (data) => {
     //popUp
@@ -18,7 +31,7 @@ export default function Container() {
           title: data.title,
           position: data.position,
           companyName: data.companyName,
-          companyLogo: data.companyLogo,
+          companyLogo: data.companyLogo || "",
           companyLocation: data.companyLocation,
           url: data.url,
           categoryId: 36,
@@ -26,30 +39,15 @@ export default function Container() {
         },
       })
       .then(function (response) {
-        console.log(response.data);
+        console.log(setJobs(response.data));
       })
       .catch(function (error) {
         console.log(error);
       });
     console.log(data);
   };
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/job-types")
-      .then(function (response) {
-        // handle success
 
-        setJobtype(response);
-
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }, []);
-
-  if (jobType === undefined) {
+  if (jobType === undefined || jobCategories === undefined) {
     return "Jobtype esta undefined";
   }
   return (
@@ -64,16 +62,20 @@ export default function Container() {
           id="form-input"
         />
         <div>
-          {/* {jobType.map((jobTypes) => {
+          {jobType.map((jobTypex) => {
             return (
               <>
-                <label>{jobTypes.name}</label>
-                <input type="radio" name="tipo" ref={register} />
+                <label>{jobTypex.name}</label>
+                <input
+                  type="radio"
+                  name={jobTypex.id}
+                  ref={register({ required: true })}
+                />
+                <br />
               </>
             );
-          })} */}
+          })}
         </div>
-
         {/* {errors.Tipo && <p>Debe llenar este campo</p>} */}
         <label>lOGO</label>
         <input
@@ -86,19 +88,22 @@ export default function Container() {
         <input
           type="text"
           placeholder="Puesto de trabajo"
-          name="posicion"
+          name="position"
           ref={register}
           id="form-input"
         />
-        <select
-          name="categoria"
-          placeholder="Categoria:"
-          ref={register}
-          id="form-input"
-        >
-          <option value="">Elija la Categoria</option>
-          <option value=""> Zona oriental</option>
-        </select>
+        <div>
+          <select className="search">
+            <option className="card-text">Busca por categoria</option>
+            {jobCategories.map((jobCategory) => {
+              return (
+                <option value={jobCategory.id} ref={register}>
+                  {jobCategory.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
         <input
           type="text"
           name="companyLocation"
@@ -114,21 +119,33 @@ export default function Container() {
           id="form-input"
         />
         <div id="message">
-          <textarea
+          <input
             placeholder="Escribe una descripcion para el puesto de trabajo"
             id="form-input"
             name="title"
-            className="text-white
-"
-          >
-            Escribe una descripcion para el puesto de trabajo
-          </textarea>
+            ref={register}
+            className="text-white"
+          />
         </div>
         <input
           type="submit"
           value="Enviar"
+          onClick={onSubmit}
           className="btn btn-block btn-info button"
         />
+        {/* <div className="popUp" id="popUp">
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+          <h5>Wey</h5>
+        </div>
+        {/* 
+    var popUpShow = document.getElementById("popUp");
+    popUpShow.className("visibilityx"); */}{" "}
       </form>
     </div>
   );

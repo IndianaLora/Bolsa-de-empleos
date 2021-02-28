@@ -16,17 +16,17 @@ code {
     monospace;
 }
 #container {
-  display: flex;
+  display: grid;
   justify-content: center;
   width: 100%;
 }
 #form {
-  display: grid;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 5%;
-  max-width: 1000px;
+  max-width: 500px;
   padding: 100px;
   border-color: solid rgb(17, 53, 211);
   border-radius: 5px;
@@ -121,6 +121,9 @@ input {
   border-top: 5px solid rgb(17, 53, 211);
   border-bottom: 5px solid #e40f0f;
   visibility: hidden;
+}
+.visibilityx {
+  visibility: visible;
 }
 img {
   margin-left: 10%;
