@@ -38,7 +38,7 @@ export default function Busqueda() {
 
         {
           <div>
-            <select className="search-jobs">
+            <select className="key-search">
               <option className="text-dark">Busca por categoria</option>
               {jobCategories.map((jobCategory) => {
                 return (
