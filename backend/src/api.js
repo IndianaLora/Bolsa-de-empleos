@@ -1,10 +1,11 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 const { PrismaClient } = require("@prisma/client");
 
-const privateKey = "kjsandkasndkasnd;askdasdkasdjhqwi";
+const secret = "kjsandkasndkasnd;askdasdkasdjhqwi";
 const app = express();
 const port = 3001;
 const prisma = new PrismaClient();
@@ -20,6 +21,8 @@ app.get("/api/job-categories", async (req, res) => {
   const jobCategorys = await prisma.jobCategory.findMany();
   res.send(jobCategorys);
 });
+
+//hacer query por categoria
 
 app.get("/api/jobs", async (req, res) => {
   const page = Math.max(parseInt(req.query.page, 10), 1); //10 sistema decimal
@@ -57,6 +60,7 @@ app.use(bodyParser.json());
 
 app.post("/api/users/register", async (req, res) => {
   const username = req.body.data.username;
+  console.log(username.length);
   const exist = await prisma.user.findFirst({
     where: {
       username: {
@@ -65,11 +69,16 @@ app.post("/api/users/register", async (req, res) => {
     },
   });
   if (exist) {
-    throw new Error("Usuario ya existe");
+    return res.status(500).json({
+      error: "Usuario ya existe",
+    });
   }
   bcrypt.hash(req.body.data.password, 10, async function (err, hash) {
     if (err) {
-      throw new Error("No se pudo hashear el password");
+      console.error("No se pudo hashear el password");
+      return res.status(500).json({
+        error: "No se pudo registrar un usuario",
+      });
     }
     const userRegister = await prisma.user.create({
       data: {
@@ -93,22 +102,29 @@ app.post("/api/auth/login", async (req, res) => {
   });
 
   if (!user) {
+    console.error("Este usuario no existe");
     return res.status(500).json({
       error: "Credenciales invalidas",
     });
   }
   bcrypt.compare(req.body.data.password, user.password, function (err, result) {
     if (err || !result) {
+      console.error("Este password no existe");
       return res.status(500).json({
         error: "Credenciales invalidas",
       });
     }
     jwt.sign(
-      { id: user.id },
-      privateKey,
-      { algorithm: "RS256" },
+      {
+        id: user.id,
+      },
+      secret,
+      {
+        algorithm: "HS256",
+      },
       function (err, token) {
         if (err) {
+          console.error("No se pudo firmar token", err);
           return res.status(500).json({
             error: "Credenciales invalidas",
           });
@@ -119,14 +135,35 @@ app.post("/api/auth/login", async (req, res) => {
       }
     );
   });
-  return res.status(500).json({
-    error: "Credenciales invalidas",
-  });
 });
 
-app.get("/api/auth/check", async (req, res) => {
-  const check = await prisma.user.findMany();
-  res.send(check);
+app.post("/api/auth/check", async (req, res) => {
+  const token = req.body.params.token;
+  jwt.verify(token, secret, async function (err, decoded) {
+    if (err) {
+      console.error("No se pudo verificar token", err);
+      return res.status(500).json({
+        error: "Error interno",
+      });
+    }
+    console.log(decoded);
+    const user = await prisma.user.findUnique({
+      where: {
+        id: decoded.id,
+      },
+    });
+
+    if (!user) {
+      console.error("Este token no existe");
+      return res.status(500).json({
+        error: "Error interno",
+      });
+    }
+    res.send({
+      id: user.id,
+      name: user.username,
+    });
+  });
 });
 app.get("/api/auth/logout", async (req, res) => {
   const userlogout = await prisma.user.findMany();

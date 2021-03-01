@@ -1,4 +1,4 @@
-import axios from "axios"; //Funciona 'fetch' permite conectarte la API
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
@@ -8,8 +8,6 @@ export default function Login() {
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm();
 
-  //Funcion que maneja los datos que son enviados atraves del formulario de Login
-  //La informacion Formulario login se uarda en 'data'
 
   const onSubmit = (data) => {
     let loginUrl = "http://localhost:3001/api/auth/login";
@@ -21,7 +19,10 @@ export default function Login() {
         },
       })
       .then(function (res) {
-        history.push("/container");
+        console.log(res.data.token);
+        localStorage.setItem("token", res.data.token);
+        console.log(localStorage.getItem("token"));
+        // history.push("/container");
       })
       .catch(function (err) {
         console.error(err);

@@ -1,7 +1,5 @@
 .card-body {
   display: grid;
-  margin-top: 5%;
-  margin-bottom: 5%;
   margin-left: 15%;
   width: 1100px;
   height: 200px;
@@ -9,7 +7,6 @@
   background-color: #19768d;
 }
 body {
-  background-image: url("fondo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,7 +23,6 @@ body {
   margin-bottom: 90%;
   height: 70px;
   width: 300px;
-
 }
 .key-search {
   margin-top: 5%;
@@ -36,6 +32,7 @@ body {
   border-radius: 10%;
   border-radius: 5px;
   border: 2px solid transparent;
+  color: black;
   background-color: rgba(17, 17, 17, 0.2);
   border-bottom: 5px solid #1467ac;
 }

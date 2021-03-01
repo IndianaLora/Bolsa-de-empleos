@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "./App"; //named export
 import { useForm } from "react-hook-form";
+
 import axios from "axios";
 import "./Form.css";
-//letras blancas
 
 export default function Container() {
   const { register, handleSubmit, errors } = useForm();
   const [jobType, setJobtype] = useState();
   const [jobs, setJobs] = useState();
   const [jobCategories, setJobCategories] = useState();
+
+  const user = useContext(UserContext);
+  console.log(user);
 
   useEffect(() => {
     axios.get("http://localhost:3001/api/job-categories").then((response) => {
@@ -57,7 +61,7 @@ export default function Container() {
     <div id="container" className="container">
       <div className="popUp" id="popUp">
         <h5>{}</h5>
-        <h5>Wey</h5>
+        <h5 className="card-title">Wey</h5>
         <h5>Wey</h5>
         <h5>Wey</h5>
         <h5>Wey</h5>
@@ -88,7 +92,6 @@ export default function Container() {
         </div>
         {/* {errors.Tipo && <p>Debe llenar este campo</p>} */}
         <label>lOGO</label>
-        //multipart
         <input
           type="file"
           placeholder=" Logo (opcional):"
