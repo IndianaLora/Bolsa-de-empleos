@@ -8,7 +8,6 @@ export default function Login() {
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm();
 
-
   const onSubmit = (data) => {
     let loginUrl = "http://localhost:3001/api/auth/login";
     axios
@@ -22,7 +21,8 @@ export default function Login() {
         console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
         console.log(localStorage.getItem("token"));
-        // history.push("/container");
+        alert("Bienvenido ya puedes postear tu trabajo");
+        history.push("/container");
       })
       .catch(function (err) {
         console.error(err);
