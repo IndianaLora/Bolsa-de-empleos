@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./img/fondo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +18,8 @@ code {
   display: grid;
   justify-content: center;
   width: 100%;
+  margin-top: 150px;
+  
 }
 #form {
   display: flex;
@@ -34,6 +35,7 @@ code {
   background-color: rgba(17, 17, 17, 0.8);
   border-top: 5px solid rgb(17, 53, 211);
   border-bottom: 5px solid #e40f0f;
+  
 }
 #form-input {
   display: flex;

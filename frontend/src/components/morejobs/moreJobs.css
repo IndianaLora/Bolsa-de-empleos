@@ -7,23 +7,12 @@
     background-color: #19768d;
   }
   body {
-    background-image: url("fondo.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+   
   }
   .search-jobs {
     height: 70px;
     width: 80px;
     margin-left: 0.5%;
-  }
-  .more-jobs {
-    position: absolute;
-    margin-top: 5%;
-    margin-left: 60%;
-    margin-bottom: 90%;
-    height: 70px;
-    width: 300px;
   }
   .key-search {
     margin-top: 5%;
@@ -41,13 +30,6 @@
     margin-top: 15%;
   }
   
-  .h1 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: rgb(17, 8, 8);
-    background-color: transparent;
-  }
   .label-category {
     display: flex;
     margin-left: 15%;

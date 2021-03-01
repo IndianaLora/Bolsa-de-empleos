@@ -30,15 +30,17 @@ export default function Busqueda() {
   return (
     <div>
       <div>
+      <section id="bordercolor">
+        <br></br>
         <h1 className="h1">¿Buscas empleo?</h1>
         <br></br>
-        <p className="pa">
-          Selecciona el area de trabajo que quieres buscar y la ciudad
+        <p id="pa">
+          Selecciona el area de trabajo que quieres buscar y la ciudad.
         </p>
 
-        {
-          <div>
-            <select className="key-search">
+          
+          <div id="contenedor">
+            <select className="key-search2">
               <option className="text-dark">Busca por categoria</option>
               {jobCategories.map((jobCategory) => {
                 return (
@@ -49,7 +51,6 @@ export default function Busqueda() {
               })}
             </select>
           </div>
-        }
         <button
           className="btn btn-danger  more-jobs"
           type="submit"
@@ -60,32 +61,38 @@ export default function Busqueda() {
           Mas trabajos
         </button>
         <input
-          className="key-search"
+          className="key-search1"
           type="search"
           placeholder="Buscar Empleos"
         />
         <button className="btn btn-primary search-jobs" type="submit">
           Buscar
         </button>
+        </section>
 
-        <div>
+        <div className="contendorTable">
+        <table className="table table-dark table-sm">
+        <thead>
+                <tr>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Compañia</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Posicion</th>
+                </tr>
+              </thead>
           {jobs.map((job) => {
             return (
-              <div className="card-">
-                <label>{job.categoryId}</label>
-                <div className="card-body">
-                  <h4 className="card-tittle">{job.companyLocation}</h4>
-                  <h4 className="card-tittle">{job.companyName}</h4>
-                  <h5 className="card-tittle">{job.position}</h5>
-                  <p className="card-text">
-                    Some quick exmple text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-                <br />
-              </div>
+              <tbody>
+                <tr className="tr2">
+                  <td className="job">{job.categoryId}</td> 
+                  <td className="job">{job.companyLocation}</td>
+                  <td className="job">{job.companyName}</td>
+                  <td className="job">{job.position}</td>
+                </tr>
+              </tbody>
             );
           })}
+        </table>
         </div>
       </div>
     </div>
