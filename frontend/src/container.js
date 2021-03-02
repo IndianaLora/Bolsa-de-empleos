@@ -44,14 +44,12 @@ export default function Container() {
       })
       .then(function (response) {
         console.log(setJobs(response.data));
+        alert("Gracias por postear su trabajo");
       })
       .catch(function (error) {
         console.log(error);
       });
     console.log(data);
-
-    var popUpShow = document.getElementById("popUp");
-    popUpShow.className("popUp");
   };
 
   if (jobType === undefined || jobCategories === undefined) {
@@ -59,17 +57,6 @@ export default function Container() {
   }
   return (
     <div id="container" className="container">
-      <div className="popUp" id="popUp">
-        <h5>{}</h5>
-        <h5 className="card-title">Wey</h5>
-        <h5>Wey</h5>
-        <h5>Wey</h5>
-        <h5>Wey</h5>
-        <h5>Wey</h5>
-        <h5>Wey</h5>
-        <h5>Wey</h5>
-      </div>
-      ;
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <h2 className="text-black">Postea tu trabajo</h2>
         <input

@@ -38,7 +38,7 @@ export default function Busqueda() {
 
         {
           <div>
-            <select className="key-search">
+            <select className="more-jobs">
               <option className="text-dark">Busca por categoria</option>
               {jobCategories.map((jobCategory) => {
                 return (
@@ -50,7 +50,7 @@ export default function Busqueda() {
             </select>
           </div>
         }
-        <button
+        {/* <button
           className="btn btn-danger  more-jobs"
           type="submit"
           onClick={() => {
@@ -58,7 +58,7 @@ export default function Busqueda() {
           }}
         >
           Mas trabajos
-        </button>
+        </button> */}
         <input
           className="key-search"
           type="search"
@@ -74,13 +74,17 @@ export default function Busqueda() {
               <div className="card-">
                 <label>{job.categoryId}</label>
                 <div className="card-body">
-                  <h4 className="card-tittle">{job.companyLocation}</h4>
-                  <h4 className="card-tittle">{job.companyName}</h4>
-                  <h5 className="card-tittle">{job.position}</h5>
-                  <p className="card-text">
-                    Some quick exmple text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <h4 className="card-tittle">
+                    Ubicacion:{job.companyLocation}
+                  </h4>
+                  <h4 className="card-tittle">
+                    Empresa:{"  "}
+                    {job.companyName}
+                  </h4>
+                  <h5 className="card-tittle">
+                    Posicion: {"  "}
+                    {job.position}
+                  </h5>
                 </div>
                 <br />
               </div>

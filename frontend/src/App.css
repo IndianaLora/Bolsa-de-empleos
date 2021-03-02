@@ -4,17 +4,13 @@
   padding: 0%;
   box-sizing: border-box;
   outline: none;
-  
 }
 .App {
   text-align: center;
 }
 
 body {
-  background-image: url("img/fondo.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(to right, rgb(46, 46, 104), rgb(218, 152, 152));
 }
 h1 {
   color: rgb(7, 7, 7);
@@ -36,4 +32,3 @@ nav {
   background-color: #fcfcfc;
   transition: 0.6s;
 }
-
