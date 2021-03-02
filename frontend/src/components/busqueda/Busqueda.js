@@ -30,15 +30,23 @@ export default function Busqueda() {
   return (
     <div>
       <div>
+      <section id="bordercolor">
+        <br></br>
         <h1 className="h1">¿Buscas empleo?</h1>
         <br></br>
-        <p className="pa">
-          Selecciona el area de trabajo que quieres buscar y la ciudad
+        <p id="pa">
+          Selecciona el area de trabajo que quieres buscar y la ciudad.
         </p>
 
+<<<<<<< HEAD
         {
           <div>
             <select className="more-jobs">
+=======
+          
+          <div id="contenedor">
+            <select className="key-search2">
+>>>>>>> d2003939bd4ed596bc39ae7200d5aa973966bf61
               <option className="text-dark">Busca por categoria</option>
               {jobCategories.map((jobCategory) => {
                 return (
@@ -49,8 +57,12 @@ export default function Busqueda() {
               })}
             </select>
           </div>
+<<<<<<< HEAD
         }
         {/* <button
+=======
+        <button
+>>>>>>> d2003939bd4ed596bc39ae7200d5aa973966bf61
           className="btn btn-danger  more-jobs"
           type="submit"
           onClick={() => {
@@ -60,17 +72,28 @@ export default function Busqueda() {
           Mas trabajos
         </button> */}
         <input
-          className="key-search"
+          className="key-search1"
           type="search"
           placeholder="Buscar Empleos"
         />
         <button className="btn btn-primary search-jobs" type="submit">
           Buscar
         </button>
+        </section>
 
-        <div>
+        <div className="contendorTable">
+        <table className="table table-dark table-sm">
+        <thead>
+                <tr>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Compañia</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Posicion</th>
+                </tr>
+              </thead>
           {jobs.map((job) => {
             return (
+<<<<<<< HEAD
               <div className="card-">
                 <label>{job.categoryId}</label>
                 <div className="card-body">
@@ -88,8 +111,19 @@ export default function Busqueda() {
                 </div>
                 <br />
               </div>
+=======
+              <tbody>
+                <tr className="tr2">
+                  <td className="job">{job.categoryId}</td> 
+                  <td className="job">{job.companyLocation}</td>
+                  <td className="job">{job.companyName}</td>
+                  <td className="job">{job.position}</td>
+                </tr>
+              </tbody>
+>>>>>>> d2003939bd4ed596bc39ae7200d5aa973966bf61
             );
           })}
+        </table>
         </div>
       </div>
     </div>

@@ -2,17 +2,17 @@ import React from "react";
 
 export const sidebarData = [
   {
-    tittle: "Inicio",
+    tittle:"Inicio",
     path: "/Busqueda",
     className: "nav-text",
   },
   {
-    tittle: "Postea un empleo",
+    tittle:"Postea",
     path: "/Container",
     className: "nav-text",
   },
   {
-    tittle: "Logueate",
+    tittle:"Login",
     path: "/login",
     className: "nav-text",
   },
