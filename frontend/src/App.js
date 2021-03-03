@@ -1,4 +1,5 @@
 import axios from "axios";
+import "antd/dist/antd.css";
 import React, { useState, useEffect } from "react";
 import Busqueda from "./components/busqueda/Busqueda";
 import Container from "./container";

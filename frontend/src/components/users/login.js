@@ -2,6 +2,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
+import { Button, notification } from "antd";
 import "./users.css";
 
 export default function Login() {
@@ -9,6 +10,15 @@ export default function Login() {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
+    const openNotification = () => {
+      const args = {
+        message: "Notification Title",
+        description:
+          "I will never close automatically. This is a purposely very very long description that has many many characters and words.",
+        duration: 0,
+      };
+      notification.open(args);
+    };
     let loginUrl = "http://localhost:3001/api/auth/login";
     axios
       .post(loginUrl, {
@@ -21,8 +31,10 @@ export default function Login() {
         console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
         console.log(localStorage.getItem("token"));
-        alert("Bienvenido ya puedes postear tu trabajo");
-        history.push("/container");
+        // alert("Bienvenido ya puedes postear tu trabajo");
+        document.getElementById("notification").innerHTML = openNotification;
+        openNotification();
+        // history.push("/container");
       })
       .catch(function (err) {
         console.error(err);
@@ -32,6 +44,7 @@ export default function Login() {
   return (
     <div className="container">
       <form class="login-box" onSubmit={handleSubmit(onSubmit)}>
+        <div id="notification"></div>
         <FaRegUser className="regis-img" />
         <strong className="text-center">Accede a tu cuenta</strong>
 
@@ -64,9 +77,9 @@ export default function Login() {
           className="btn btn-block btn-secondary"
         />
         <button
-          onClick={() => {
-            history.push("/registro");
-          }}
+          // onClick={() => {
+
+          // }}
           className="btn btn-sm btn-primary"
         >
           Registrarse

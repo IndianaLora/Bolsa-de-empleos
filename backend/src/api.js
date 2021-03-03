@@ -10,7 +10,6 @@ const app = express();
 const port = 3001;
 const prisma = new PrismaClient();
 
-
 app.use(cors());
 
 app.get("/api/job-types", async (req, res) => {
@@ -29,8 +28,8 @@ app.get("/api/jobs", async (req, res) => {
   const page = Math.max(parseInt(req.query.page, 10), 1); //10 sistema decimal
 
   const jobs = await prisma.job.findMany({
-    //parseInt((page - 1) * 10)
-    skip: 10,
+    //
+    skip: parseInt((page - 1) * 10),
     take: 10,
   });
   res.send(jobs);

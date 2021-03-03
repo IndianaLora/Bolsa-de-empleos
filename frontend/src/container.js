@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
+
 import { UserContext } from "./App"; //named export
 import { useForm } from "react-hook-form";
+import { message, Button } from "antd";
 
 import axios from "axios";
 import "./Form.css";
@@ -28,6 +30,9 @@ export default function Container() {
 
   const onSubmit = (data) => {
     console.log(data);
+    const info = () => {
+      message.info("This is a normal message");
+    };
     const jobsUrl = "http://localhost:3001/api/jobs";
     axios
       .post(jobsUrl, {
@@ -44,7 +49,8 @@ export default function Container() {
       })
       .then(function (response) {
         console.log(setJobs(response.data));
-        alert("Gracias por postear su trabajo");
+        // alert("Gracias por postear su trabajo");
+        info();
       })
       .catch(function (error) {
         console.log(error);

@@ -1,33 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
 }
+/*comente esto y se arreglo el css en mi localhost */
 body {
-  margin: 100%;
-  height: 100vh;
+  /* margin: 100%;
+  height: 100vh; */
 }
 
-#bordercolor{
+#bordercolor {
   margin-top: -20px;
   margin-bottom: 50px;
-  width: 100% ;
+  width: 100%;
   height: 600px;
-  background: linear-gradient(to right , rgb(46, 46, 104) , rgb(218, 152, 152));
+  background: linear-gradient(to right, rgb(46, 46, 104), rgb(218, 152, 152));
   box-shadow: 0px 6px 40px rgb(71, 70, 70);
   z-index: 0;
 }
-
+card-
 /*boton de busqueda*/
 .search-jobs {
   height: 57px !important;
   width: 160px !important;
-  margin-left: 40px  !important;
+  margin-left: 40px !important;
   box-shadow: 5px 3px 12px 0px rgb(31, 29, 29);
-
+  border-radius: 10%;
+}
+#pagination {
+  color: black;
+  margin-left: 42%;
 }
 
 /*boton de mostrar mastrabajos*/
@@ -39,11 +44,11 @@ body {
   height: 64px;
   width: 400px !important;
   transition: 1s;
-  box-shadow: 5px 3px 12px 0px rgb(31, 29, 29) !important; 
+  box-shadow: 5px 3px 12px 0px rgb(31, 29, 29) !important;
 }
 
-.more-jobs:hover{
-  background: linear-gradient(to right , rgb(46, 46, 104) , rgb(218, 152, 152));
+.more-jobs:hover {
+  background: linear-gradient(to right, rgb(46, 46, 104), rgb(218, 152, 152));
   box-shadow: 5px 3px 12px 0px rgb(31, 29, 29);
   border: none;
 }
@@ -61,14 +66,13 @@ body {
   color: black;
 }
 
-::placeholder{
-  
+::placeholder {
 }
 
-#contenedor{
+#contenedor {
   margin-top: 50px;
- width: 50px;
- height: 50px;
+  width: 50px;
+  height: 50px;
 }
 /*input de buscar categoria*/
 .key-search2 {
@@ -80,17 +84,15 @@ body {
   border-radius: 20px;
   box-shadow: 5px 3px 10px 0px rgb(39, 38, 38);
   color: black;
-  
 }
 .h1 {
   width: 434px;
   margin-left: 1000px;
   margin-top: 200px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;   
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   text-shadow: 3px 4px 3px rgb(48, 46, 46);
 }
-
 
 #pa {
   display: flex;
@@ -100,65 +102,28 @@ body {
   margin-left: 0;
   color: rgb(250, 250, 250);
   text-shadow: 3px 4px 3px rgb(48, 46, 46);
-} 
-
-.contendorTable{
+}
+.ant-pagination-item {
+  color: rgb(17, 16, 16);
+}
+.contendorTable {
   margin-left: 281px;
   width: 80%;
 }
-.contendorTable tr{
+.contendorTable tr {
   font-size: 30px;
 }
 
-.contendorTable th{
+.contendorTable th {
   border-left: 1px solid white;
   text-align: center;
 }
 
-.contendorTable tbody .tr2{
+.contendorTable tbody .tr2 {
   font-size: 20px !important ;
 }
 
-.contendorTable tbody .job{
+.contendorTable tbody .job {
   border-left: 1px solid white;
   text-align: center;
 }
-
-
-
-
-
-/*.label-category {
-  display: flex;
-  margin-left: 15%;
-  color: rgb(17, 8, 8);
-  background-color: transparent;
-}
-.select1 {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-left: 20%;
-  max-width: 100px;
-
-  background-color: #def3f8;
-}*/
-
-
-/*.select1 {
-  max-width: 50px;
-}*/
-
-
-/*.btn2 {
-  margin-left: 2px;
-  background: #079cc2;
-  max-width: 50px;
-  border-radius: 10px;
-}
-
-.btn2:hover {
-  background: #b8caf1;
-  color: rgb(5, 5, 5);
-  border: none;
-}*/

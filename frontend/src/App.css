@@ -10,23 +10,7 @@
 }
 
 body {
-<<<<<<< HEAD
   background: linear-gradient(to right, rgb(46, 46, 104), rgb(218, 152, 152));
-}
-h1 {
-  color: rgb(7, 7, 7);
-  box-sizing: border-box;
-  width: 100%;
-  margin-left: 2%;
-  display: flex;
-  align-items: baseline;
-  padding: 1%;
-  margin-top: 0%;
-  background-color: rgb(255, 255, 255);
-=======
-  
-
->>>>>>> d2003939bd4ed596bc39ae7200d5aa973966bf61
 }
 
 .App-link {
