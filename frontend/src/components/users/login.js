@@ -19,6 +19,7 @@ export default function Login() {
       };
       notification.open(args);
     };
+    openNotification(); //TODO: when program loadnotification to tell the client to login before post a job
     let loginUrl = "http://localhost:3001/api/auth/login";
     axios
       .post(loginUrl, {
@@ -33,7 +34,7 @@ export default function Login() {
         console.log(localStorage.getItem("token"));
         // alert("Bienvenido ya puedes postear tu trabajo");
         document.getElementById("notification").innerHTML = openNotification;
-        openNotification();
+
         // history.push("/container");
       })
       .catch(function (err) {
@@ -77,9 +78,9 @@ export default function Login() {
           className="btn btn-block btn-secondary"
         />
         <button
-          // onClick={() => {
-
-          // }}
+          onClick={() => {
+            history.push("/registro");
+          }}
           className="btn btn-sm btn-primary"
         >
           Registrarse

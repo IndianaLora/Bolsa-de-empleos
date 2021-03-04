@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-
+import ReactDom from "react-dom";
+import { FaApple } from "react-icons/fa";
 import { UserContext } from "./App"; //named export
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { message, Button } from "antd";
 
 import axios from "axios";
 import "./Form.css";
@@ -12,7 +13,10 @@ export default function Container() {
   const [jobType, setJobtype] = useState();
   const [jobs, setJobs] = useState();
   const [jobCategories, setJobCategories] = useState();
-
+  const history = useHistory();
+  const home = () => {
+    history.push("/busqueda");
+  };
   const user = useContext(UserContext);
   console.log(user);
 
@@ -27,12 +31,37 @@ export default function Container() {
       setJobtype(response.data);
     });
   }, []);
+  const editar = () => {
+    var popUp = document.getElementById("popUp");
+    popUp.style = "visibility: hidden";
+  };
 
   const onSubmit = (data) => {
+    const pop = (
+      <div>
+        <FaApple className="regis-img" />
+        <h5>Empresa: {data.companyName}</h5>
+        <h5>Tipo: {data.tipo}</h5>
+        <h5>posicion: {data.position}</h5>
+        <h5>Ubicacion: {data.location}</h5>
+        <h5>categoria: {data.category}</h5>
+        <h5>Email: {data.url}</h5>
+        <h5>descripcion: {data.descripcion}</h5>
+        <div>
+          <button className="btn btn-warning" onClick={editar}>
+            Editar
+          </button>
+          <button className="btn btn-info" onClick={home}>
+            Finalizar
+          </button>
+        </div>
+      </div>
+    );
+    var popUp = document.getElementById("popUp");
+    ReactDom.render(pop, popUp);
+    popUp.style = "visibility: visible";
     console.log(data);
-    const info = () => {
-      message.info("This is a normal message");
-    };
+
     const jobsUrl = "http://localhost:3001/api/jobs";
     axios
       .post(jobsUrl, {
@@ -43,18 +72,18 @@ export default function Container() {
           companyLogo: data.companyLogo,
           companyLocation: data.companyLocation,
           url: data.url,
-          categoryId: 36,
+          categoryId: 68,
           typeId: 2,
         },
       })
       .then(function (response) {
         console.log(setJobs(response.data));
         // alert("Gracias por postear su trabajo");
-        info();
       })
       .catch(function (error) {
         console.log(error);
       });
+
     console.log(data);
   };
 
@@ -63,8 +92,15 @@ export default function Container() {
   }
   return (
     <div id="container" className="container">
-      <form id="form" onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="text-black">Postea tu trabajo</h2>
+      <div className="popUp" id="popUp">
+        {" "}
+      </div>
+      <form
+        id="form"
+        onSubmit={handleSubmit(onSubmit)}
+        className="table table-danger table-sm"
+      >
+        <h2 className="text-black">Postea tu posicion de trabajo</h2>
         <input
           type="text"
           placeholder="Compañía:"

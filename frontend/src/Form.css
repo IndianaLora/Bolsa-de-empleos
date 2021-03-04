@@ -10,20 +10,22 @@ code {
   justify-content: center;
   width: 100%;
   margin-top: 150px;
+  margin-left: 15%;
 }
 #form {
-  display: grid;
- grid-template-columns: auto;
-  margin-top: 2%;
+  display: flexbox;
+  flex-direction: inherit;
   margin-bottom: 2%;
   padding: 5%;
-  max-width: 1000px;
+  max-width: 600px;
+  margin-left: 10%;
   padding: 100px;
+  color: black;
   border-color: solid rgb(17, 53, 211);
   border-radius: 5px;
-  box-shadow: 0px 0px 20px 20px #97c0e7;
-  background-color: rgba(17, 17, 17, 0.8);
-  border-top: 5px solid rgb(17, 53, 211);
+  box-shadow: 0px 0px 20px 20px #915ea5;
+  background-color: rgba(246, 247, 248, 0.8);
+  border-top: 5px solid #915ea5;
   border-bottom: 5px solid #e40f0f;
 }
 #form-input {
@@ -89,9 +91,14 @@ input {
   background-color: rgb(230, 192, 25);
 }
 .finalizar {
-  background-color: rgb(21, 146, 21);
+  margin-left: 5%;
 }
-
+.regis-img {
+  width: 220px;
+  height: 150px;
+  margin-bottom: 10%;
+  color: black;
+}
 .popUp {
   position: absolute;
   box-sizing: border-box;
@@ -99,7 +106,7 @@ input {
   width: 30%;
   height: 100%;
   margin-left: 30%;
-  color: white;
+  color: rgb(231, 207, 207);
   background: rgba(194, 23, 23, 0.8);
   display: flex;
   justify-content: center;
@@ -108,14 +115,13 @@ input {
   border-radius: 10%;
   border-color: solid rgb(17, 53, 211);
   border-radius: 5px;
-  box-shadow: 0px 0px 20px 20px #97c0e7;
-  background-color: rgba(17, 17, 17, 0.8);
-  border-top: 5px solid rgb(17, 53, 211);
+  box-shadow: 0px 0px 20px 20px #915ea5;
+  background-color: rgb(168, 121, 162);
+  border-top: 5px solid#915ea5;
   border-bottom: 5px solid #e40f0f;
+  visibility: hidden;
 }
-.visibilityx {
-  visibility: visible;
-}
+
 img {
   margin-left: 10%;
   width: 200px;

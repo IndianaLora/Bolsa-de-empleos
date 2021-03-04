@@ -22,14 +22,12 @@ app.get("/api/job-categories", async (req, res) => {
   res.send(jobCategorys);
 });
 
-//hacer query por categoria
-
 app.get("/api/jobs", async (req, res) => {
   const page = Math.max(parseInt(req.query.page, 10), 1); //10 sistema decimal
 
   const jobs = await prisma.job.findMany({
-    //
-    skip: parseInt((page - 1) * 10),
+    //parseInt((page - 1) * 10)
+    skip: 10,
     take: 10,
   });
   res.send(jobs);
@@ -54,6 +52,20 @@ app.post("/api/jobs", async (req, res) => {
     },
   });
   res.send(jobs);
+});
+
+//hacer query por categoria
+app.post("/api/jobs/filter", async (req, res) => {
+  const filterJobs = await prisma.job.findMany({
+    skip: 10,
+    take: 10,
+    where: {
+      //new job
+      //find jobs where category id equals to....
+      //fix default id=32
+    },
+  });
+  res.send(filterJobs);
 });
 
 app.use(bodyParser.json());

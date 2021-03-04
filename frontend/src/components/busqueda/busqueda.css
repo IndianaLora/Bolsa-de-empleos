@@ -30,10 +30,6 @@ card-
   box-shadow: 5px 3px 12px 0px rgb(31, 29, 29);
   border-radius: 10%;
 }
-#pagination {
-  color: black;
-  margin-left: 42%;
-}
 
 /*boton de mostrar mastrabajos*/
 .more-jobs {
@@ -66,7 +62,9 @@ card-
   color: black;
 }
 
-::placeholder {
+.pagination {
+  margin-left: 39%;
+  background-color: transparent;
 }
 
 #contenedor {

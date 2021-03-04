@@ -1,22 +1,21 @@
-* {
-  color: white;
-
-}
 .regis-img {
   width: 220px;
   height: 150px;
+  color: black;
 }
 .text-center {
-  color: white;
+  color: rgb(24, 22, 22);
   font-size: 20px;
   margin-bottom: 7%;
+  margin-bottom: 20%;
+  text-shadow: 5px 10px 20px #0d0d0e;
 }
 .login-box {
   background-size: cover;
   display: flex;
   flex-direction: column;
   margin-left: 40%;
-  margin-top: 300px;
+  margin-top: 10%;
   margin-bottom: 2%;
   padding: 5%;
   max-width: 400px;
@@ -24,9 +23,9 @@
   color: #d1caca;
   border-color: solid rgb(17, 53, 211);
   border-radius: 5px;
-  box-shadow: 0px 0px 20px 20px #97c0e7;
-  background-color: rgba(23, 25, 26, 0.8);
-  border-top: 5px solid rgb(17, 53, 211);
+  box-shadow: 0px 0px 20px 20px #915ea5;
+  background-color: rgba(246, 247, 248, 0.8);
+  border-top: 5px solid #915ea5;
   border-bottom: 5px solid #e40f0f;
   opacity: 50;
 }
@@ -53,6 +52,9 @@
 #c-tag {
   color: rgb(206, 198, 198);
   background-color: rgba(184, 21, 21, 0.8);
+}
+input {
+  color: #0d0d0e;
 }
 .regiss {
   color: #97c0e7;

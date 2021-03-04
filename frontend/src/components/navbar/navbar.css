@@ -35,7 +35,7 @@
 }
 
 .nav-text {
-  color: white;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: start;
   align-items: center;
