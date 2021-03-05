@@ -34,7 +34,7 @@ export default function Busqueda() {
       })
       .then(function (response) {
         console.log(response);
-        alert("consumiendo de api"); //quitar esto luego
+        alert("Gracias por postear tu trabajo"); //quitar esto luego
       })
       .catch(function (error) {
         console.log(error + "no funciona");
@@ -47,7 +47,6 @@ export default function Busqueda() {
   }
 
   return (
-    
     <div>
       <div>
         <section id="bordercolor">

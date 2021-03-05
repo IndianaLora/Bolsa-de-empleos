@@ -41,12 +41,11 @@ export default function Container() {
       <div>
         <FaApple className="regis-img" />
         <h5>Empresa: {data.companyName}</h5>
-        <h5>Tipo: {data.tipo}</h5>
+       
         <h5>posicion: {data.position}</h5>
-        <h5>Ubicacion: {data.location}</h5>
-        <h5>categoria: {data.category}</h5>
-        <h5>Email: {data.url}</h5>
-        <h5>descripcion: {data.descripcion}</h5>
+       
+        <h5>Url: {data.url}</h5>
+        <h5>descripcion: {data.title}</h5>
         <div>
           <button className="btn btn-warning" onClick={editar}>
             Editar

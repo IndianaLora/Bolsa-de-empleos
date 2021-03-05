@@ -56,6 +56,19 @@ app.post("/api/jobs", async (req, res) => {
 
 //hacer query por categoria
 app.post("/api/jobs/filter", async (req, res) => {
+  console.log(req.body);
+  const filterJobs = await prisma.job.findMany({
+    skip: 10,
+    take: 10,
+    where: {
+      //new job
+      //find jobs where category id equals to....
+      //fix default id=32
+    },
+  });
+  res.send(filterJobs);
+});
+app.post("/api/jobs/keySearch", async (req, res) => {
   const filterJobs = await prisma.job.findMany({
     skip: 10,
     take: 10,

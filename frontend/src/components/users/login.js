@@ -10,16 +10,7 @@ export default function Login() {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
-    const openNotification = () => {
-      const args = {
-        message: "Notification Title",
-        description:
-          "I will never close automatically. This is a purposely very very long description that has many many characters and words.",
-        duration: 0,
-      };
-      notification.open(args);
-    };
-    openNotification(); //TODO: when program loadnotification to tell the client to login before post a job
+    //TODO: when program loadnotification to tell the client to login before post a job
     let loginUrl = "http://localhost:3001/api/auth/login";
     axios
       .post(loginUrl, {
@@ -32,14 +23,21 @@ export default function Login() {
         console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
         console.log(localStorage.getItem("token"));
-        // alert("Bienvenido ya puedes postear tu trabajo");
-        document.getElementById("notification").innerHTML = openNotification;
 
-        // history.push("/container");
+        history.push("/container");
       })
       .catch(function (err) {
         console.error(err);
       });
+    const openNotification = () => {
+      const args = {
+        message: "Bienvenido",
+        description: "Gracias por iniciar session , bienvenido",
+        duration: 0,
+      };
+      notification.open(args);
+    };
+    openNotification();
   };
 
   return (
