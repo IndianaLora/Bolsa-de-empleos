@@ -1,4 +1,8 @@
-# Bolsa-de-empleos
-![Image of main page](https://github.com/IndianaLora/Bolsa-de-empleos/blob/main/frontend/index.png?raw=true)
+# Bolsa-de-empleos 
+## Bienvenido a nuestro proyecto!!!!!!!
+###### Haga click en la imagen y vera el video presentando nuestro proyecto
+[![Image of main page](https://github.com/IndianaLora/Bolsa-de-empleos/blob/main/MainPage.png?raw=true)](https://www.youtube.com/watch?v=LWeiydKl0mU)
 
-[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://www.youtube.com/watch?v=Wt4BX5npFQo)
+
+
+
